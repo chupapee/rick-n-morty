@@ -1,15 +1,16 @@
-import { NavbarLink, NavbarWrap, PagesWrap, TitleBox, Wrap } from "./styles"
+import { LinksWrap, NavbarLink, NavbarWrap, TitleBox, Wrap } from "./styles"
 
 export const Header: React.FC = (): React.ReactElement => {
   return (
     <>
       <Wrap>
         <NavbarWrap>
-          <PagesWrap>
-            <NavbarLink to="/records">Records</NavbarLink>
+          <LinksWrap>
+            <NavbarLink to="/charts">Charts</NavbarLink>
+            <NavbarLink to="/albums">Albums</NavbarLink>
             <NavbarLink to="/artists">Artists</NavbarLink>
-          </PagesWrap>
-
+          </LinksWrap>
+          <NavbarLink to="/cart">shopIcon</NavbarLink>
         </NavbarWrap>
         <TitleBox />
       </Wrap>

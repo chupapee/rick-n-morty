@@ -16,11 +16,11 @@ export const NavbarWrap = styled.nav`
   height: 20%;
   margin: 0 auto;
   margin-bottom: 10px;
-
   display: flex;
+  justify-content: space-between;
 `
 
-export const PagesWrap = styled.div`
+export const LinksWrap = styled.div`
   display: flex;
   gap: 2em;
 `

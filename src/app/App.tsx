@@ -1,14 +1,12 @@
-import { useState } from "react";
 import { GlobalStyle } from "./globalStyles";
-import { artistsAPI } from "../service/artistsAPI";
 import { Header } from "../widgets/header";
+import { Routing } from "./routing";
 
 export const App: React.FC = () => {
-  
-  // artistsAPI.getTopArtists()
 
   return <>
     <GlobalStyle />
     <Header />
+    <Routing />
   </>;
 };
