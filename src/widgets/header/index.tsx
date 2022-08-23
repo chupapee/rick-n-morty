@@ -1,13 +1,18 @@
-import { NavLink } from "react-router-dom"
-import { Navbar, Wrap } from "./styles"
+import { NavbarLink, NavbarWrap, PagesWrap, TitleBox, Wrap } from "./styles"
 
 export const Header: React.FC = (): React.ReactElement => {
-  return <>
-    <Wrap>
-      <Navbar>
-        <NavLink to='/records'>records</NavLink>
-        <NavLink to='/artists'>artists</NavLink>
-      </Navbar>
-    </Wrap>
-  </>
+  return (
+    <>
+      <Wrap>
+        <NavbarWrap>
+          <PagesWrap>
+            <NavbarLink to="/records">Records</NavbarLink>
+            <NavbarLink to="/artists">Artists</NavbarLink>
+          </PagesWrap>
+
+        </NavbarWrap>
+        <TitleBox />
+      </Wrap>
+    </>
+  );
 }

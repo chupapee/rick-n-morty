@@ -1,3 +1,4 @@
+import { NavLink } from "react-router-dom"
 import styled from "styled-components"
 
 export const Wrap = styled.div`
@@ -5,15 +6,36 @@ export const Wrap = styled.div`
   max-width: 1415px;
   min-width: 300px;
   height: 100px;
-  background-color: blue;
   
   margin: 0 auto;
   padding: 15px;
 `
 
-export const Navbar = styled.nav`
+export const NavbarWrap = styled.nav`
   width: 100%;
-  background-color: blue;
+  height: 20%;
   margin: 0 auto;
-  background-color: #fff;
+  margin-bottom: 10px;
+
+  display: flex;
+`
+
+export const PagesWrap = styled.div`
+  display: flex;
+  gap: 2em;
+`
+
+export const NavbarLink = styled(NavLink)`
+  color: #000;
+  text-decoration: none;
+  transition: color .1s linear;
+
+  &:hover {
+    color: blue;
+  }
+`
+
+export const TitleBox = styled.div`
+  width: 100%;
+  height: 80%;
 `
