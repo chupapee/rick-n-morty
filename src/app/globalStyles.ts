@@ -10,7 +10,17 @@ export const GlobalStyle = createGlobalStyle`
     outline: none;
   }
   body {
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     font-size: 16;
+    padding: 15px;
+
+    max-width: 1400px;
+    min-width: 300px;
+    margin: 0 auto;
+  }
+  :root {
+    --grey: #444;
+    --bg-blue: #394052;
+    --hover-blue: #9191FF;
   }
 `

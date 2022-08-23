@@ -1,4 +1,4 @@
-import { LinksWrap, NavbarLink, NavbarWrap, TitleBox, Wrap } from "./styles"
+import { LinksWrap, NavbarLink, NavbarWrap, Wrap } from "./styles";
 
 export const Header: React.FC = (): React.ReactElement => {
   return (
@@ -10,10 +10,12 @@ export const Header: React.FC = (): React.ReactElement => {
             <NavbarLink to="/albums">Albums</NavbarLink>
             <NavbarLink to="/artists">Artists</NavbarLink>
           </LinksWrap>
-          <NavbarLink to="/cart">shopIcon</NavbarLink>
+          <LinksWrap gap={'.1em'} >
+            <NavbarLink to="/cart">shopIcon</NavbarLink>
+            <NavbarLink to="/cart">searchIcon</NavbarLink>
+          </LinksWrap>
         </NavbarWrap>
-        <TitleBox />
       </Wrap>
     </>
   );
-}
+};

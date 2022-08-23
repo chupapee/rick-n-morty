@@ -3,39 +3,41 @@ import styled from "styled-components"
 
 export const Wrap = styled.div`
   width: 100%;
-  max-width: 1415px;
+  max-width: 1400px;
   min-width: 300px;
-  height: 100px;
   
   margin: 0 auto;
-  padding: 15px;
+  margin-bottom: 2em;
 `
 
 export const NavbarWrap = styled.nav`
   width: 100%;
   height: 20%;
   margin: 0 auto;
-  margin-bottom: 10px;
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
 `
 
-export const LinksWrap = styled.div`
+type linkType = {
+  gap?: string
+}
+
+export const LinksWrap = styled.div<linkType>`
   display: flex;
-  gap: 2em;
+  gap: ${props => props.gap || '2em'};
 `
 
 export const NavbarLink = styled(NavLink)`
-  color: #000;
+  color: #444;
   text-decoration: none;
   transition: color .1s linear;
+  font-weight: 700;
+  letter-spacing: .2em;
+  padding: .5em;
 
   &:hover {
-    color: blue;
-  }
-`
-
-export const TitleBox = styled.div`
-  width: 100%;
-  height: 80%;
+    color: var(--hover-blue);
+    font-weight: 900;
+}
 `

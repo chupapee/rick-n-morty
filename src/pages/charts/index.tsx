@@ -1,7 +1,9 @@
+import { HeaderTitle } from "../../widgets/header/HeaderTitle";
+
 export const Charts = () => {
   console.log('work');
   
   return <>
-    records
+    <HeaderTitle title="Charts" />
   </>
 }

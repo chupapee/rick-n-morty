@@ -1,5 +1,7 @@
+import { HeaderTitle } from "../../widgets/header/HeaderTitle"
+
 export const Artists = () => {
   return <>
-    artists
+    <HeaderTitle title="Artists"/>
   </>
 }
