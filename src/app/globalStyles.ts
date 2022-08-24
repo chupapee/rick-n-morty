@@ -1,4 +1,4 @@
-import { createGlobalStyle } from "styled-components";
+import { createGlobalStyle, css } from "styled-components";
 
 export const GlobalStyle = createGlobalStyle`
   * {
@@ -22,5 +22,10 @@ export const GlobalStyle = createGlobalStyle`
     --grey: #444;
     --bg-blue: #394052;
     --hover-blue: #9191FF;
-  }
+  } 
+`
+export const flexCenter = css`
+  display: flex;
+  justify-content: center;
+  align-items: center;
 `
