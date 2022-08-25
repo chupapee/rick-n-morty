@@ -7,7 +7,6 @@ export const Wrap = styled.div`
   min-width: 300px;
   
   margin: 0 auto;
-  margin-bottom: 2em;
 `
 
 export const NavbarWrap = styled.nav`
@@ -34,7 +33,7 @@ export const NavbarLink = styled(NavLink)`
   transition: color .1s linear;
   font-weight: 700;
   letter-spacing: .2em;
-  padding: .5em;
+  padding: 1.9em 0;
 
   &:hover {
     color: var(--hover-blue);

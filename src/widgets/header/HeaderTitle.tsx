@@ -14,7 +14,8 @@ export const HeaderTitle = ({title}: IProps) => {
 
 const TitleWrap = styled.div`
   width: calc(100% - 1em);
-  padding: 2.5em 4em 4em;
+  padding: 2.5em 4em 4em 6em;
+  margin-bottom: 1em;
   border: 3px var(--grey) solid;
   box-shadow: 1em 1em var(--bg-blue);
 `

@@ -22,10 +22,17 @@ export const GlobalStyle = createGlobalStyle`
     --grey: #444;
     --bg-blue: #394052;
     --hover-blue: #9191FF;
-  } 
+  }
 `
 export const flexCenter = css`
   display: flex;
   justify-content: center;
   align-items: center;
+`
+
+export const transformShadow = css`
+  transition: .1s linear;
+  &:hover {
+    transform: translate(-1em, -1em)
+  }
 `

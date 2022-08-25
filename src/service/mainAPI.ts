@@ -10,7 +10,7 @@ interface artistsAPIType {
   getTopTracks: (country?: string) => Promise<object>,
 }
 
-export const artistsAPI: artistsAPIType = {
+export const mainAPI: artistsAPIType = {
   limit: 20,
   searchTrack(track: string) {
     return axios.get(`${rootURL}method=track.search&track=${track}&format=json&limit=${this.limit}`)
@@ -30,6 +30,6 @@ export const artistsAPI: artistsAPIType = {
   },
   getTopTracks(country) {
     return axios.get(`${rootURL}method=geo.gettoptracks&country=${country || 'united states'}&format=json&limit=${this.limit}`)
-    .then(res => res.data.tracks.track)
+    .then(res => {return res.data.tracks.track})
   },
 }
