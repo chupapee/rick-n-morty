@@ -3,19 +3,19 @@ import { useAppDispatch, useAppSelector } from "../../store";
 
 import { Content } from "../../widgets/content";
 import { HeaderTitle } from "../../widgets/header/HeaderTitle";
-import { setChartsPending } from "./chartsSlice";
+import { setCharactersPending } from "./charactersSlice";
 
-export const Charts = () => {
-  const data = useAppSelector((state) => state.charts.chartsList);
+export const Characters = () => {
+  const data = useAppSelector((state) => state.charts.charactersList);
   const dispatch = useAppDispatch();
   
   useEffect(() => {
-    dispatch(setChartsPending());
+    dispatch(setCharactersPending());
   }, [dispatch]);
 
   return (
     <>
-      <HeaderTitle title="Charts" />
+      <HeaderTitle title="Characters" />
       <Content data={data} />
     </>
   );

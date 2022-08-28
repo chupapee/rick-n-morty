@@ -1,9 +1,9 @@
 import { TypedUseSelectorHook, useSelector } from 'react-redux';
 import { useDispatch } from 'react-redux';
 import { configureStore } from "@reduxjs/toolkit";
-import { chartsSlice } from "./pages/charts/chartsSlice";
+import { chartsSlice } from "./pages/characters/charactersSlice";
 import createSagaMiddleware from "@redux-saga/core";
-import { chartsSaga } from "./pages/charts/chartsSaga";
+import { charactersSaga } from "./pages/characters/charactersSaga";
 
 const rootReducer = {
   charts: chartsSlice.reducer,
@@ -16,7 +16,7 @@ export const store = configureStore({
   middleware: [sagaMiddleware],
 });
 
-sagaMiddleware.run(chartsSaga);
+sagaMiddleware.run(charactersSaga);
 
 type RootState = ReturnType<typeof store.getState>
 type AppDispatch = typeof store.dispatch

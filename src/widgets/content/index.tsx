@@ -1,20 +1,18 @@
-import { TrackType } from "../../pages/charts/chartsSlice";
+import { CharacterType } from "../../pages/characters/charactersSlice";
 import { Card } from "./card";
 import { Wrap } from "./style";
 
 interface IData {
-  data: TrackType[]
+  data: CharacterType[]
 }
 
 export const Content: React.FC<IData> = (props) => {
   const data = props.data
-  console.log(data);
   return (
     <Wrap>
-      {data.map(({ image, title, subtitle }) => (
-        <Card image={image} title={title} subtitle={subtitle}/>
+      {data.map(({ image, name, location }) => (
+        <Card key={name} image={image} name={name} location={location}/>
       ))}
     </Wrap>
   );
 };
-

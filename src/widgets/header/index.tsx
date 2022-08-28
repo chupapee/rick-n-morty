@@ -6,7 +6,7 @@ export const Header: React.FC = (): React.ReactElement => {
       <Wrap>
         <NavbarWrap>
           <LinksWrap>
-            <NavbarLink to="/charts">Charts</NavbarLink>
+            <NavbarLink to="/characters">Characters</NavbarLink>
             <NavbarLink to="/albums">Albums</NavbarLink>
             <NavbarLink to="/artists">Artists</NavbarLink>
           </LinksWrap>

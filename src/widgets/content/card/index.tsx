@@ -1,15 +1,15 @@
-import { TrackType } from "../../../pages/charts/chartsSlice";
+import { CharacterType } from "../../../pages/characters/charactersSlice";
 import { Img, ImgWrap, Wrap } from "./style";
 
-export const Card = ({ image, title, subtitle }: TrackType) => {
+export const Card = ({ image, name, location }: CharacterType) => {
   return (
     <Wrap>
       <ImgWrap>
-        <Img src={image['#text']} alt="albumIcon" />
+        <Img src={image} alt="albumIcon" />
       </ImgWrap>
       <div>
-        <p style={{fontWeight: '600'}}>{title}</p>
-        <span style={{textDecoration: 'underline', textTransform: 'uppercase'}}>{subtitle}</span>
+        <p style={{fontWeight: '600'}}>{name}</p>
+        <span style={{textDecoration: 'underline', textTransform: 'uppercase'}}>{location}</span>
       </div>
     </Wrap>
   );
