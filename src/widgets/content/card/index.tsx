@@ -1,20 +1,15 @@
+import { TrackType } from "../../../pages/charts/chartsSlice";
 import { Img, ImgWrap, Wrap } from "./style";
 
-type PropsT = {
-  photo: string;
-  title: string;
-  detailInfo?: number | string;
-};
-
-export const Card = ({ photo, title, detailInfo }: PropsT) => {
+export const Card = ({ image, title, subtitle }: TrackType) => {
   return (
     <Wrap>
       <ImgWrap>
-        <Img src={photo} alt="albumIcon" />
+        <Img src={image['#text']} alt="albumIcon" />
       </ImgWrap>
       <div>
         <p style={{fontWeight: '600'}}>{title}</p>
-        <span style={{textDecoration: 'underline', textTransform: 'uppercase'}}>{detailInfo}</span>
+        <span style={{textDecoration: 'underline', textTransform: 'uppercase'}}>{subtitle}</span>
       </div>
     </Wrap>
   );

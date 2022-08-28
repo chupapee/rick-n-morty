@@ -1,13 +1,9 @@
 import { mainAPI } from '../../service/mainAPI';
 import { call, put, takeEvery } from 'redux-saga/effects'
-import { setChartsSuccess } from './chartsSlice';
-
-type data = {
-  data: any
-}
+import { PayloadType, setChartsSuccess } from './chartsSlice';
 
 function* workFetchCharts() {
-  const data: data = yield call(() => mainAPI.getTopTracks())
+  const data: PayloadType[] = yield call(() => mainAPI.getTopTracks())
   yield put(setChartsSuccess(data))
 }
 

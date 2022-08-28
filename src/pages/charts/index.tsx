@@ -8,7 +8,7 @@ import { setChartsPending } from "./chartsSlice";
 export const Charts = () => {
   const data = useAppSelector((state) => state.charts.chartsList);
   const dispatch = useAppDispatch();
-
+  
   useEffect(() => {
     dispatch(setChartsPending());
   }, [dispatch]);
@@ -16,7 +16,7 @@ export const Charts = () => {
   return (
     <>
       <HeaderTitle title="Charts" />
-      {/* <Content data={data} /> */}
+      <Content data={data} />
     </>
   );
 };
