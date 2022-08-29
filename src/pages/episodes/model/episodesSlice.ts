@@ -1,18 +1,6 @@
 import { PayloadAction } from "@reduxjs/toolkit";
 import { createSlice } from "@reduxjs/toolkit";
-
-export type EpisodeType = {
-  episode: string;
-  name: string;
-  characters: string[];
-  airDate: string;
-};
-
-type EpisodeState = {
-  episodeInfo: EpisodeType[];
-  isLoading: boolean;
-  error: string;
-};
+import { EpisodeState, EpisodeType } from "../types";
 
 const initialState: EpisodeState = {
   episodeInfo: [
@@ -35,9 +23,8 @@ export const episodesSlice = createSlice({
       state.isLoading = true;
     },
     setEpisodeSuccess: (state, { payload }: PayloadAction<EpisodeType>) => {
-      const characters = payload.characters.map((char) => {
-        return char.split("/")[5];
-      });
+      // orig characters looks like: "https://rickandmortyapi.com/api/character/id" => for fetching it's needed id only
+      const characters = payload.characters.map((char) => char.split("/")[5]); // splitting sep '/' and getting 5th element
       state.episodeInfo = [{ ...payload, characters: characters }];
     },
     setEpisodeError: (state) => {

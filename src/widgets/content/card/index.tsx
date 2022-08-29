@@ -1,4 +1,4 @@
-import { CharacterType } from "../../../pages/characters/charactersSlice";
+import { CharacterType } from "../../../pages/characters/types";
 import { Img, ImgWrap, Wrap } from "./style";
 
 export const Card = ({ image, name, location }: CharacterType) => {

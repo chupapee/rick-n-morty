@@ -1,6 +1,6 @@
-import { PayloadType } from './charactersSlice';
-import { characterAPI } from '../../service/mainAPI';
+import { characterAPI } from '../../../service/mainAPI';
 import { call, put, takeEvery } from 'redux-saga/effects'
+import { PayloadType } from '../types';
 import { setCharactersSuccess } from './charactersSlice';
 
 function* workFetchCharacters(action: {type: string, payload: string}) {

@@ -1,9 +1,9 @@
 import { useEffect } from "react"
-import { useAppDispatch, useAppSelector } from "../../store"
-import { Content } from "../../widgets/content"
-import { HeaderTitle } from "../../widgets/header/HeaderTitle"
-import { setCharactersPending } from "../characters/charactersSlice"
-import { setEpisodePending } from "./episodesSlice"
+import { useAppDispatch, useAppSelector } from "../../../store/types"
+import { Content } from "../../../widgets/content"
+import { HeaderTitle } from "../../../widgets/header/HeaderTitle"
+import { setCharactersPending } from "../../characters/model/charactersSlice"
+import { setEpisodePending } from "../model/episodesSlice"
 
 export const Episodes = () => {
   const episodeData = useAppSelector(state => state.episode.episodeInfo)

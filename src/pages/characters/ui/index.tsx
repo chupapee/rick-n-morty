@@ -1,9 +1,9 @@
 import { useEffect } from "react";
-import { useAppDispatch, useAppSelector } from "../../store";
+import { useAppDispatch, useAppSelector } from "../../../store/types";
 
-import { Content } from "../../widgets/content";
-import { HeaderTitle } from "../../widgets/header/HeaderTitle";
-import { setCharactersPending } from "./charactersSlice";
+import { Content } from "../../../widgets/content";
+import { HeaderTitle } from "../../../widgets/header/HeaderTitle";
+import { setCharactersPending } from "../model/charactersSlice";
 
 export const Characters = () => {
   const data = useAppSelector((state) => state.characters.charactersList);

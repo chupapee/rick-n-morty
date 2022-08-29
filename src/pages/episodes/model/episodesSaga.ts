@@ -1,6 +1,7 @@
-import { episodeAPI } from './../../service/episodeAPI';
+import { episodeAPI } from '../../../service/episodeAPI';
 import { takeEvery, call, put } from 'redux-saga/effects';
-import { setEpisodeSuccess, EpisodeType } from './episodesSlice';
+import { setEpisodeSuccess } from './episodesSlice';
+import { EpisodeType } from '../types';
 
 function* workFetchEpisode(action: {type: string, payload: number}) {
   const data: EpisodeType = yield call(() => episodeAPI.getEpisode(action.payload))

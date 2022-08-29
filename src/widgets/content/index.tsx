@@ -1,4 +1,4 @@
-import { CharacterType } from "../../pages/characters/charactersSlice";
+import { CharacterType } from "../../pages/characters/types";
 import { Card } from "./card";
 import { Wrap } from "./style";
 
