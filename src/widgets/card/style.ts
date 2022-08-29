@@ -1,4 +1,4 @@
-import { transformShadow } from './../../../app/globalStyles';
+import { transformShadow } from '../../app/globalStyles';
 import styled from "styled-components";
 
 export const Wrap = styled.div`

@@ -1,6 +1,6 @@
-import { episodesSlice } from '../pages/episodes/model/episodesSlice';
+import { episodesSlice } from '../pages/episodes/model/slice';
 import { configureStore } from "@reduxjs/toolkit";
-import { charactersSlice } from "../pages/characters/model/charactersSlice";
+import { charactersSlice } from "../pages/characters/model/slice";
 import { rootSaga, sagaMiddleware } from './sagas';
 
 const rootReducer = {

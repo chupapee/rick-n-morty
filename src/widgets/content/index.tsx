@@ -1,17 +1,17 @@
-import { CharacterType } from "../../pages/characters/types";
-import { Card } from "./card";
+import { Card } from "../card";
 import { Wrap } from "./style";
 
-interface IData {
-  data: CharacterType[]
+export interface IData {
+    image: string;
+    title: string;
+    subtitle: string;
 }
 
-export const Content: React.FC<IData> = (props) => {
-  const data = props.data
+export const Content = (data: IData[]) => {
   return (
     <Wrap>
-      {data.map(({ image, name, location }) => (
-        <Card key={name} image={image} name={name} location={location}/>
+      {data.map(({ image, title, subtitle }) => (
+        <Card key={title} image={image} title={title} subtitle={subtitle}/>
       ))}
     </Wrap>
   );

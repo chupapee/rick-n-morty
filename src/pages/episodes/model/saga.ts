@@ -1,6 +1,6 @@
 import { episodeAPI } from '../../../service/episodeAPI';
 import { takeEvery, call, put } from 'redux-saga/effects';
-import { setEpisodeSuccess } from './episodesSlice';
+import { setEpisodeSuccess } from './slice';
 import { EpisodeType } from '../types';
 
 function* workFetchEpisode(action: {type: string, payload: number}) {
