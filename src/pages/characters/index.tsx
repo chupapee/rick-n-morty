@@ -6,11 +6,11 @@ import { HeaderTitle } from "../../widgets/header/HeaderTitle";
 import { setCharactersPending } from "./charactersSlice";
 
 export const Characters = () => {
-  const data = useAppSelector((state) => state.charts.charactersList);
+  const data = useAppSelector((state) => state.characters.charactersList);
   const dispatch = useAppDispatch();
   
   useEffect(() => {
-    dispatch(setCharactersPending());
+    dispatch(setCharactersPending(''));
   }, [dispatch]);
 
   return (

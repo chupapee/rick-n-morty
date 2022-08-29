@@ -1,5 +1,16 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
+export type PayloadType = {
+  name: string;
+  image: string;
+  location: {
+    name: string;
+  };
+  gender: string;
+  species: string;
+  status: string;
+}
+
 export type CharacterType = {
   image: string;
   name: string;
@@ -28,27 +39,15 @@ const initialState: CharactersState = {
   error: false
 }
 
-export type PayloadType = {
-  name: string;
-  image: string;
-  location: {
-    name: string;
-  };
-  gender: string;
-  species: string;
-  status: string;
-}
-
-export const chartsSlice = createSlice({
+export const charactersSlice = createSlice({
   name: 'characters',
   initialState,
   reducers: {
-    setCharactersPending: (state) => {
+    setCharactersPending: (state, {payload}: PayloadAction<string>) => {
       state.isLoading = true
     },
     setCharactersSuccess: (state, {payload}: PayloadAction<PayloadType[]>) => {
       state.isLoading = false
-      console.log(payload);
       const data = payload.map(({image, location, status, name}) => ({name: name,image: image, status: status, location: location.name}))
       state.charactersList = data
     },
@@ -59,4 +58,4 @@ export const chartsSlice = createSlice({
   }
 })
 
-export const { setCharactersPending, setCharactersSuccess, setCharactersFailure } = chartsSlice.actions
+export const { setCharactersPending, setCharactersSuccess, setCharactersFailure } = charactersSlice.actions

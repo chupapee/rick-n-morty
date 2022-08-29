@@ -7,7 +7,7 @@ export const Header: React.FC = (): React.ReactElement => {
         <NavbarWrap>
           <LinksWrap>
             <NavbarLink to="/characters">Characters</NavbarLink>
-            <NavbarLink to="/albums">Albums</NavbarLink>
+            <NavbarLink to="/episodes">Episodes</NavbarLink>
             <NavbarLink to="/artists">Artists</NavbarLink>
           </LinksWrap>
           <LinksWrap gap={'.5em'} >
