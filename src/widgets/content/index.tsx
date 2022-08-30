@@ -2,8 +2,7 @@ import { IPreparedDataType } from "../../app/globalTypes";
 import { Card } from "../card";
 import { Wrap } from "./style";
 
-export const Content = (data: IPreparedDataType[]) => {
-  console.log(data);
+export const Content: React.FC<{ data: IPreparedDataType[] }> = ({ data }) => {
   return (
     <Wrap>
       {data.map(({ image, title, subtitle }) => (

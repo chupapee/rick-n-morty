@@ -1,4 +1,5 @@
 import { useEffect } from "react"
+import { IPreparedDataType } from "../../../app/globalTypes"
 import { useAppDispatch, useAppSelector } from "../../../store/types"
 import { Content } from "../../../widgets/content"
 import { HeaderTitle } from "../../../widgets/header/HeaderTitle"
@@ -19,8 +20,15 @@ export const Episodes = () => {
     dispatch(setCharactersPending(characters))
   }, [episodeData, dispatch])
 
+  const preparedData: IPreparedDataType[] = contentData.map(item => ({
+    image: item.image,
+    title: item.name,
+    subtitle: item.location,
+    detail: item.status
+  }))
+
   return <>
-    <HeaderTitle title="Episode title: " />
-    {/* <Content data={contentData} /> */}
+    <HeaderTitle title='' />
+    <Content data={preparedData} />
   </>
 }

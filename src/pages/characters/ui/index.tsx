@@ -10,16 +10,16 @@ export const Characters = () => {
   const data = useAppSelector((state) => state.characters.charactersList);
   const dispatch = useAppDispatch();
 
+  useEffect(() => {
+    dispatch(setCharactersPending(''));
+  }, [dispatch]);
+  
   const preparedData: IPreparedDataType[] = data.map(item => ({
     image: item.image,
     title: item.name,
     subtitle: item.location,
     detail: item.status,
   }))
-
-  useEffect(() => {
-    dispatch(setCharactersPending(''));
-  }, [dispatch]);
 
   return (
     <>
