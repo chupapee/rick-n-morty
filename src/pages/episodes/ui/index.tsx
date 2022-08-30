@@ -21,6 +21,6 @@ export const Episodes = () => {
 
   return <>
     <HeaderTitle title="Episode title: " />
-    <Content data={contentData} />
+    {/* <Content data={contentData} /> */}
   </>
 }

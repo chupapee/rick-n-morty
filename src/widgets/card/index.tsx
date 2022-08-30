@@ -1,7 +1,7 @@
-import { IData } from "../content";
+import { IPreparedDataType } from "../../app/globalTypes";
 import { Img, ImgWrap, Wrap } from "./style";
 
-export const Card: React.FC<IData> = ({ image, title, subtitle }) => {
+export const Card: React.FC<IPreparedDataType> = ({ image, title, subtitle }) => {
   return (
     <Wrap>
       <ImgWrap>

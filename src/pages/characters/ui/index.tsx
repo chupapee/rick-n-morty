@@ -1,4 +1,5 @@
 import { useEffect } from "react";
+import { IPreparedDataType } from "../../../app/globalTypes";
 import { useAppDispatch, useAppSelector } from "../../../store/types";
 
 import { Content } from "../../../widgets/content";
@@ -9,6 +10,13 @@ export const Characters = () => {
   const data = useAppSelector((state) => state.characters.charactersList);
   const dispatch = useAppDispatch();
 
+  const preparedData: IPreparedDataType[] = data.map(item => ({
+    image: item.image,
+    title: item.name,
+    subtitle: item.location,
+    detail: item.status,
+  }))
+
   useEffect(() => {
     dispatch(setCharactersPending(''));
   }, [dispatch]);
@@ -16,7 +24,7 @@ export const Characters = () => {
   return (
     <>
       <HeaderTitle title="Characters" />
-      <Content data={data} />
+      <Content data={preparedData} />
     </>
   );
 };

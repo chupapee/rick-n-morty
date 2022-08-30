@@ -1,13 +1,9 @@
+import { IPreparedDataType } from "../../app/globalTypes";
 import { Card } from "../card";
 import { Wrap } from "./style";
 
-export interface IData {
-    image: string;
-    title: string;
-    subtitle: string;
-}
-
-export const Content = (data: IData[]) => {
+export const Content = (data: IPreparedDataType[]) => {
+  console.log(data);
   return (
     <Wrap>
       {data.map(({ image, title, subtitle }) => (
