@@ -1,6 +1,6 @@
 import { PayloadAction } from "@reduxjs/toolkit";
 import { createSlice } from "@reduxjs/toolkit";
-import { EpisodeState, EpisodeType } from "../types";
+import { EpisodeState, PayloadType } from "../types";
 
 const initialState: EpisodeState = {
   episodeInfo: [
@@ -9,7 +9,14 @@ const initialState: EpisodeState = {
       name: "",
       characters: [],
       airDate: "",
-    },
+    }
+  ],
+  charactersList: [
+    {
+      name: '',
+      image: '',
+      location: {name: ''},
+    }
   ],
   isLoading: false,
   error: ''
@@ -22,15 +29,23 @@ export const episodesSlice = createSlice({
     setEpisodePending: (state, { payload }: PayloadAction<number>) => {
       state.isLoading = true;
     },
-    setEpisodeSuccess: (state, { payload }: PayloadAction<EpisodeType>) => {
-      // orig characters looks like: "https://rickandmortyapi.com/api/character/id" => for fetching it's needed id only
-      const characters = payload.characters.map((char) => char.split("/")[5]); // splitting sep '/' and getting 5th element
-      state.episodeInfo = [{ ...payload, characters: characters }];
+    setEpisodeSuccess: (state, { payload }: PayloadAction<PayloadType>) => {
+      state.episodeInfo = payload.episode
+      state.charactersList = payload.characters
     },
     setEpisodeError: (state) => {
       state.error = 'Oops... Something went wrong!'
+    },
+    setEpCharactersPending: (state, { payload }) => {
+      state.isLoading = true
+    },
+    setEpCharactersSuccess: (state, { payload }) => {
+      state.isLoading = false
+      if(payload[0]){
+        state.charactersList = payload
+      }
     }
   },
 });
 
-export const { setEpisodePending, setEpisodeSuccess } = episodesSlice.actions;
+export const { setEpisodePending, setEpisodeSuccess, setEpCharactersPending, setEpCharactersSuccess } = episodesSlice.actions;

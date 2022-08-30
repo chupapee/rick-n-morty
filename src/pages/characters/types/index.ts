@@ -1,25 +1,29 @@
 export type PayloadType = {
-  name: string;
-  image: string;
-  location: {
+  res: {
     name: string;
-  };
-  gender: string;
-  species: string;
-  status: string;
+    image: string;
+    location: {
+      name: string;
+    };
+    gender: string;
+    species: string;
+    status: string;
+  }[];
+  page: number
 }
 
 export type CharacterType = {
   image: string;
   name: string;
   status?: string;
-  location: string;
+  location: {name: string};
   gender?: string;
   species?: string;
 }
 
 export type CharactersState = {
   charactersList: CharacterType[];
+  page: number;
   isLoading: boolean;
   error: boolean
 }

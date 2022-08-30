@@ -6,7 +6,7 @@ import { episodesSaga } from '../pages/episodes/model/saga';
 export function * rootSaga() {
   yield all([
     charactersSaga(),
-    episodesSaga()
+    episodesSaga(),
   ])
 }
 

@@ -1,10 +1,10 @@
 import axios from "axios"
 
 export const characterAPI = {
-  url: 'https://rickandmortyapi.com/api/character',
-  async getCharactersList(){
-    const res = await axios.get(`${this.url}`)
-    return res.data.results
+  url: 'https://rickandmortyapi.com/api/character/',
+  async getCharactersList(page: number){
+    const res = await axios.get(`${this.url}/?page=${page}`)
+    return {res: res.data.results, pages: res.data.info.pages}
   },
   async getCharacter(id: number){
     const res = await axios.get(`${this.url}/${id}`)
