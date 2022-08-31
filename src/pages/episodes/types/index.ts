@@ -4,7 +4,7 @@ export type EpisodeType = {
   episode: string;
   name: string;
   characters: string[];
-  airDate: string;
+  air_date: string;
 };
 
 export type EpisodeState = {

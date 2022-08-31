@@ -14,15 +14,21 @@ export const Episodes = () => {
     dispatch(setEpisodePending(1))
   }, [dispatch])
 
-  const preparedData: IPreparedDataType[] = contentData.map(item => ({
+  const prepContentData: IPreparedDataType[] = contentData.map(item => ({
     image: item.image,
     title: item.name,
     subtitle: item.location.name,
     detail: item.status
   }))
 
+  const prepHeaderData = {
+    name: episodeData[0].name,
+    episode: episodeData[0].episode,
+    air_date: episodeData[0].air_date,
+  }
+
   return <>
-    <HeaderTitle title='Episode' />
-    <Content data={preparedData} />
+    <HeaderTitle {...prepHeaderData} />
+    <Content data={prepContentData} />
   </>
 }

@@ -23,8 +23,8 @@ export const Characters = () => {
 
   return (
     <>
-      <HeaderTitle title="Characters" />
-      <Content data={preparedData} />
+      {/* <HeaderTitle title="Characters" /> */}
+      {/* <Content data={preparedData} /> */}
     </>
   );
 };

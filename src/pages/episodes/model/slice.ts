@@ -8,7 +8,7 @@ const initialState: EpisodeState = {
       episode: "",
       name: "",
       characters: [],
-      airDate: "",
+      air_date: "",
     }
   ],
   charactersList: [

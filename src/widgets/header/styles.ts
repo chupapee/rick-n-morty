@@ -1,42 +1,62 @@
-import { NavLink } from "react-router-dom"
-import styled from "styled-components"
+import styled from "styled-components";
 
 export const Wrap = styled.div`
-  width: 100%;
-  max-width: 1400px;
-  min-width: 300px;
-  
-  margin: 0 auto;
-`
+  width: calc(100% - 1em);
+  padding: 2em 3em 3em 5em;
+  margin-bottom: 1em;
+  border: 3px var(--grey) solid;
+  box-shadow: 1em 1em var(--bg-blue);
 
-export const NavbarWrap = styled.nav`
-  width: 100%;
-  height: 20%;
-  margin: 0 auto;
   display: flex;
-  flex-wrap: wrap;
   justify-content: space-between;
-`
+`;
 
-type linkType = {
-  gap?: string
-}
-
-export const LinksWrap = styled.div<linkType>`
+export const TitleWrap = styled.div`
   display: flex;
-  gap: ${props => props.gap || '2em'};
-`
+  flex-direction: column;
+  justify-content: center;
+  gap: 1em;
+`;
 
-export const NavbarLink = styled(NavLink)`
-  color: #444;
-  text-decoration: none;
-  transition: color .1s linear;
+export const Title = styled.p`
+  font-size: 2em;
   font-weight: 700;
-  letter-spacing: .2em;
-  padding: 1.9em 0;
+  letter-spacing: 0.2em;
+`;
+
+export const BtnWrap = styled.div`
+  width: 35%;
+  display: flex;
+  flex-direction: column;
+  gap: 2em;
+  justify-content: space-between;
+`;
+
+export const Price = styled.div`
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 1em 1.3em;
+  border: 2px solid var(--grey);
+  transition: .1s linear;
+  &:hover {
+    border-color: var(--hover-blue);
+    font-weight: 700;
+  }
+`;
+
+export const Button = styled.button`
+  font-size: 1.2em;
+  text-align: center;
+  cursor: pointer;
+  padding: 1rem;
+  background-color: var(--hover-blue);
+  border: 2px solid var(--hover-blue);
+  transition: 0.1s linear;
 
   &:hover {
-    color: var(--hover-blue);
-    font-weight: 900;
-}
-`
+    background-color: #fff;
+  }
+`;

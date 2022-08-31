@@ -6,12 +6,11 @@ export const Header: React.FC = (): React.ReactElement => {
       <Wrap>
         <NavbarWrap>
           <LinksWrap>
-            <NavbarLink to="/characters">Characters</NavbarLink>
+            {/* <NavbarLink to="/characters">Characters</NavbarLink> */}
             <NavbarLink to="/episodes">Episodes</NavbarLink>
-            <NavbarLink to="/artists">Artists</NavbarLink>
           </LinksWrap>
           <LinksWrap gap={'.5em'} >
-            <NavbarLink to="/cart">shopIcon</NavbarLink>
+            <NavbarLink to="/cart"></NavbarLink>
             <NavbarLink to="/cart">searchIcon</NavbarLink>
           </LinksWrap>
         </NavbarWrap>
