@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { addPurchase } from "../../pages/cart/model/slice";
 import { Purchase } from "../../pages/cart/types";
-import { useAppDispatch, useAppSelector } from "../../store/types";
+import { useAppDispatch } from "../../store/types";
 import { BtnWrap, Button, Price, Title, TitleWrap, Wrap } from "./styles";
 
 type PropType = {
@@ -53,7 +53,7 @@ export const EpHeader: React.FC<PropType> = ({name, episode, air_date, detail}) 
     <Wrap>
       <TitleWrap>
         <Title>{name}</Title>
-        <Title>{air_date}</Title>
+        <Title>Air date: {air_date}</Title>
         <Title>{detail}</Title>
       </TitleWrap>
       <BtnWrap>

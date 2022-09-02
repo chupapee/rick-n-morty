@@ -34,7 +34,7 @@ export const Total = () => {
       <TotalWrap>
         <Wrap>
           <DiscountWrap>
-            <span>Discount code</span>
+            <span>Discount code:</span>
             <Discount>
               <input
                 onKeyDown={e => handleKeyDown(e)}

@@ -44,7 +44,7 @@ export const Price = styled.div<PType>`
 
   padding: 1em 1.3em;
   border: 2px solid var(--grey);
-  border-color: ${({choosed}) => (choosed && 'var(--hover-blue);')};
+  border-color: ${({choosed}) => (choosed && 'var(--dark-blue);')};
   font-weight: ${({choosed}) => (choosed && '700;')};
   transition: .1s linear;
   &:hover {

@@ -25,6 +25,10 @@ export const ShopItem = styled.div`
   border-bottom: 1px solid var(--light-grey);
   padding: 2rem 0;
 
+  &:last-child {
+    border-bottom: none;
+  }
+
   & div {
     display: flex;
     flex-direction: column;

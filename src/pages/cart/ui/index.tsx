@@ -1,6 +1,6 @@
 import { useAppDispatch, useAppSelector } from "../../../store/types";
 import { Total } from "../../../widgets/card/totalPrice";
-import { CartHeader } from "../../../widgets/header/CartHeader";
+import { Header } from "../../../widgets/header/Header";
 import { removePurchase } from "../model/slice";
 import { Purchase } from "../types";
 import { ShopItem, ShopWrap, Wrap } from "./styles";
@@ -15,7 +15,7 @@ export const Cart = () => {
 
   return (
     <>
-      <CartHeader title="Your cart" />
+      <Header title="Your cart" />
       <Wrap>
         <ShopWrap>
           {shopList.map(({ episode, quality, price }) => (
