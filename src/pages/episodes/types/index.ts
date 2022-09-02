@@ -1,5 +1,3 @@
-import { CharacterType } from "../../characters/types";
-
 export type EpisodeType = {
   episode: string;
   name: string;
@@ -17,4 +15,13 @@ export type EpisodeState = {
 export type PayloadType = {
   episode: EpisodeType[];
   characters: CharacterType[]
+}
+
+export type CharacterType = {
+  image: string;
+  name: string;
+  status?: string;
+  location: {name: string};
+  gender?: string;
+  species?: string;
 }
