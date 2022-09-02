@@ -1,4 +1,4 @@
-import { EpisodeType } from "../../pages/episodes/types";
+import { useState } from "react";
 import { BtnWrap, Button, Price, Title, TitleWrap, Wrap } from "./styles";
 
 type PropType = {
@@ -9,18 +9,26 @@ type PropType = {
 }
 
 export const HeaderTitle: React.FC<PropType> = ({name, episode, air_date, detail}) => { 
+  
+  const [cheapChoosed, setCheapChoosed] = useState(false)
+  const [choosed, setChoosed] = useState(false)
+
+  const choose = (value?: string) => {
+    if(value) setCheapChoosed(!cheapChoosed)
+    else setChoosed(!choosed)
+  }
+
   return <>
     <Wrap>
       <TitleWrap>
         <Title>{name}</Title>
-        {/* <Title>{episode}</Title> */}
         <Title>{air_date}</Title>
         <Title>{detail}</Title>
       </TitleWrap>
       <BtnWrap>
-        <Price><span>{episode} 720p</span><span>2.99$</span></Price>
-        <Price><span>{episode} HD</span>5.99$</Price>
-        <Button>Add to cart</Button>
+        <Price choosed={cheapChoosed} onClick={() => choose('cheap')}><span>{episode} | 720p</span><span>2.99$</span></Price>
+        <Price choosed={choosed} onClick={() => choose()} ><span>{episode} | HD</span>5.99$</Price>
+        <Button >Add to cart</Button>
       </BtnWrap>
     </Wrap>
   </>

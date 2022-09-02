@@ -32,7 +32,11 @@ export const BtnWrap = styled.div`
   justify-content: space-between;
 `;
 
-export const Price = styled.div`
+type PType = {
+  choosed?: boolean;
+}
+
+export const Price = styled.div<PType>`
   cursor: pointer;
   display: flex;
   justify-content: space-between;
@@ -40,6 +44,8 @@ export const Price = styled.div`
 
   padding: 1em 1.3em;
   border: 2px solid var(--grey);
+  border-color: ${({choosed}) => (choosed && 'var(--hover-blue);')};
+  font-weight: ${({choosed}) => (choosed && '700;')};
   transition: .1s linear;
   &:hover {
     border-color: var(--hover-blue);
