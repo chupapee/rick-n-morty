@@ -1,9 +1,18 @@
-import { useAppSelector } from "../../../store/types";
+import { useAppDispatch, useAppSelector } from "../../../store/types";
+import { Total } from "../../../widgets/card/totalPrice";
 import { CartHeader } from "../../../widgets/header/CartHeader";
+import { removePurchase } from "../model/slice";
+import { Purchase } from "../types";
 import { ShopItem, ShopWrap, Wrap } from "./styles";
 
 export const Cart = () => {
-  const shopList = useAppSelector((state) => state.cart.shopList);
+  const dispatch = useAppDispatch()
+  const shopList = useAppSelector(state => state.cart.shopList);
+
+  const remove = (purchase: Purchase) => {
+    dispatch(removePurchase(purchase))
+  }
+
   return (
     <>
       <CartHeader title="Your cart" />
@@ -11,13 +20,18 @@ export const Cart = () => {
         <ShopWrap>
           {shopList.map(({ episode, quality, price }) => (
             <ShopItem key={price}>
-              <div>{episode}</div>
-              <div>{quality}</div>
-              <div>{price}</div>
-              <button>remove</button>
+              <div>
+                <div>
+                  <p>{episode}</p>
+                  <p>Quality: {quality}</p>
+                  <span onClick={() => remove({episode, quality, price})}>Remove</span>
+                </div>
+              </div>
+              <span>{price}$</span>
             </ShopItem>
           ))}
         </ShopWrap>
+        <Total />
       </Wrap>
     </>
   );

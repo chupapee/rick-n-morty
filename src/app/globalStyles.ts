@@ -20,7 +20,10 @@ export const GlobalStyle = createGlobalStyle`
   }
   :root {
     --grey: #444;
+    --light-grey: #E5E7EB;
+    --blue: #4F46E5;
     --bg-blue: #394052;
+    --dark-blue: #1D4ED8;
     --hover-blue: #9191FF;
   }
 `

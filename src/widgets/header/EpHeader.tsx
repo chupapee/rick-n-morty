@@ -19,13 +19,13 @@ export const EpHeader: React.FC<PropType> = ({name, episode, air_date, detail}) 
   const cheapEp: Purchase = {
     episode: episode,
     quality: '720p',
-    price: '2.99$'
+    price: 2.99,
   }
 
   const expensiveEp: Purchase = {
     episode: episode,
     quality: 'HD',
-    price: '5.99$'
+    price: 5.99,
   }
 
   const choose = (value?: string) => {
@@ -57,8 +57,12 @@ export const EpHeader: React.FC<PropType> = ({name, episode, air_date, detail}) 
         <Title>{detail}</Title>
       </TitleWrap>
       <BtnWrap>
-        <Price choosed={cheapChoosed} onClick={() => choose('cheap')}><span>{episode} | {cheapEp.quality}</span><span>{cheapEp.price}</span></Price>
-        <Price choosed={choosed} onClick={() => choose()} ><span>{episode} | {expensiveEp.quality}</span>{expensiveEp.price}</Price>
+        <Price choosed={cheapChoosed} onClick={() => choose('cheap')}>
+          <span>{episode} | {cheapEp.quality}</span><span>{cheapEp.price}$</span>
+        </Price>
+        <Price choosed={choosed} onClick={() => choose()}>
+          <span>{episode} | {expensiveEp.quality}</span>{expensiveEp.price}$
+        </Price>
         <Button onClick={addToCart} >Add to cart</Button>
       </BtnWrap>
     </Wrap>
