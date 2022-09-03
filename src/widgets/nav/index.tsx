@@ -20,18 +20,20 @@ const Icon = styled.div<IType>`
   &::after {
     content: '${({length}) => length}';
     position: absolute;
-    right: 0;
-    bottom: -5px;
-    width: 22px;
-    height: 22px;
+    right: -1px;
+    bottom: -3px;
+    width: 20px;
+    height: 18px;
     display: flex;
     justify-content: center;
     align-items: center;
-
+    text-align: center;
     border-radius: 4px;
     font-size: 10px;
     font-weight: 700;
     color: #fff;
+    padding-left: 3px;
+    padding-bottom: 3px;
     background-color: var(--hover-blue);
   }
 `

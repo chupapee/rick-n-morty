@@ -38,7 +38,7 @@ export const cartSlice = createSlice({
       state.shopList = newList
       const total = state.shopList.map(({price}) => {
         return price
-      }).reduce((sum, current) => sum + current)
+      }).reduce((sum, current) => sum + current, 0)
       state.totalPrice = total
     },
     setTotalPrice: (state, {payload}: PayloadAction<number>) => {
