@@ -52,7 +52,7 @@ export const EpHeader: React.FC<PropType> = ({name, episode, air_date, detail}) 
   return <>
     <Wrap>
       <TitleWrap>
-        <Title>{name}</Title>
+        <Title>Title: {name}</Title>
         <Title>Air date: {air_date}</Title>
         <Title>{detail}</Title>
       </TitleWrap>
