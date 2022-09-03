@@ -1,42 +1,5 @@
-import styled from "styled-components";
 import { useAppSelector } from "../../store/types";
-import { LinksWrap, NavbarLink, NavbarWrap, Wrap } from "./styles";
-
-type IType = {
-  length: number;
-}
-
-const Icon = styled.div<IType>`
-  width: 40px;
-  height: 40px;
-  background: url('https://img.icons8.com/ios/50/000000/shopping-bag--v1.png') center/cover no-repeat;
-  z-index: 2;
-  text-align: center;
-  position: relative;
-  transition: all .1s linear;
-  &:hover {
-    background: url('https://i.postimg.cc/bwD3LP02/icons8-shopping-bag-50.png') center/cover no-repeat;
-  }
-  &::after {
-    content: '${({length}) => length}';
-    position: absolute;
-    right: -1px;
-    bottom: -3px;
-    width: 20px;
-    height: 18px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    border-radius: 4px;
-    font-size: 10px;
-    font-weight: 700;
-    color: #fff;
-    padding-left: 3px;
-    padding-bottom: 3px;
-    background-color: var(--hover-blue);
-  }
-`
+import { Icon, LinksWrap, NavbarLink, NavbarWrap, Wrap } from "./styles";
 
 export const Header: React.FC = (): React.ReactElement => {
   const shopLength = useAppSelector(state => state.cart.shopList.length)

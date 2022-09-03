@@ -2,6 +2,7 @@ import { useEffect } from "react"
 import { IPreparedDataType } from "../../../app/globalTypes"
 import { useAppDispatch, useAppSelector } from "../../../store/types"
 import { Content } from "../../../widgets/content"
+import { Filter } from "../../../widgets/filter"
 import { EpHeader } from "../../../widgets/header/EpHeader"
 import { setEpisodePending } from "../model/slice"
 
@@ -14,11 +15,13 @@ export const Episodes = () => {
     dispatch(setEpisodePending(1))
   }, [dispatch])
 
-  const prepContentData: IPreparedDataType[] = contentData.map(item => ({
-    image: item.image,
-    title: item.name,
-    subtitle: item.location.name,
-    detail: item.status
+  const prepContentData: IPreparedDataType[] = contentData.map(({image, location, name, gender, species, status}) => ({
+    image: image,
+    imageTitle: species,
+    title: name,
+    subtitle: location.name,
+    detail: status,
+    moreDetail: gender,
   }))
 
   const prepHeaderData = {
@@ -29,6 +32,7 @@ export const Episodes = () => {
 
   return <>
     <EpHeader {...prepHeaderData} />
+    <Filter />
     <Content data={prepContentData} />
   </>
 }
