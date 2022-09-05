@@ -9,6 +9,17 @@ export const Wrap = styled.div`
 
   display: flex;
   justify-content: space-between;
+  gap: 1.5rem;
+
+  @media screen and (max-width: 960px) {
+    padding: 1em 2em 2em 4em;
+  }
+
+  @media screen and (max-width: 735px) {
+    padding: 2em 2em;
+    flex-direction: column;
+    align-items: center;
+  }
 `;
 
 export const TitleWrap = styled.div`
@@ -22,14 +33,26 @@ export const Title = styled.p`
   font-size: 2em;
   font-weight: 700;
   letter-spacing: 0.2em;
+
+  @media screen and (max-width: 960px) {
+    font-size: 1.5em;
+  }
+
+  @media screen and (max-width: 500px) {
+    font-size: 1.1em;
+  }
 `;
 
 export const BtnWrap = styled.div`
-  width: 35%;
+  width: 40%;
   display: flex;
   flex-direction: column;
   gap: 2em;
   justify-content: space-between;
+
+  @media screen and (max-width: 735px) {
+    width: 100%;
+  }
 `;
 
 type PType = {
@@ -41,6 +64,7 @@ export const Price = styled.div<PType>`
   display: flex;
   justify-content: space-between;
   align-items: center;
+  gap: 1em;
 
   padding: 1em 1.3em;
   border: 2px solid var(--grey);
@@ -50,6 +74,10 @@ export const Price = styled.div<PType>`
   &:hover {
     border-color: var(--hover-blue);
     font-weight: 700;
+  }
+
+  @media screen and (max-width: 735px) {
+    padding: .8em 1em;
   }
 `;
 
