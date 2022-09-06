@@ -4,14 +4,12 @@ import styled from "styled-components"
 export const Wrap = styled.div`
   width: 100%;
   max-width: 1400px;
-  min-width: 300px;
   
   margin: 0 auto;
 `
 
 export const NavbarWrap = styled.nav`
   width: 100%;
-  height: 20%;
   margin: 0 auto;
   display: flex;
   flex-wrap: wrap;
@@ -34,7 +32,7 @@ export const NavbarLink = styled(NavLink)`
   transition: color .1s linear;
   font-weight: 700;
   letter-spacing: .2em;
-  padding: 1.9em 0;
+  padding: 1em;
 
   &:hover {
     color: var(--hover-blue);

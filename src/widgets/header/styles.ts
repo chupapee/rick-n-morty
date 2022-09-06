@@ -16,9 +16,14 @@ export const Wrap = styled.div`
   }
 
   @media screen and (max-width: 735px) {
-    padding: 2em 2em;
+    padding: 2em;
     flex-direction: column;
     align-items: center;
+    gap: .5rem;
+  }
+
+  @media screen and (max-width: 450px) {
+    padding: 1em;
   }
 `;
 
@@ -50,8 +55,13 @@ export const BtnWrap = styled.div`
   gap: 2em;
   justify-content: space-between;
 
+  @media screen and (max-width: 1000px) {
+    width: 50%;
+  }
+
   @media screen and (max-width: 735px) {
     width: 100%;
+    gap: 1em;
   }
 `;
 
@@ -77,7 +87,7 @@ export const Price = styled.div<PType>`
   }
 
   @media screen and (max-width: 735px) {
-    padding: .8em 1em;
+    padding: .5em .8em;
   }
 `;
 
@@ -92,5 +102,9 @@ export const Button = styled.button`
 
   &:hover {
     background-color: #fff;
+  }
+
+  @media screen and (max-width: 735px) {
+    padding: .6rem;
   }
 `;

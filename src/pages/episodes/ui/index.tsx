@@ -2,7 +2,7 @@ import { useEffect } from "react"
 import { IPreparedDataType } from "../../../app/globalTypes"
 import { useAppDispatch, useAppSelector } from "../../../store/types"
 import { Content } from "../../../widgets/content"
-import { Filter } from "../../../widgets/filter"
+import { FilterBar } from "../../../widgets/filter"
 import { EpHeader } from "../../../widgets/header/EpHeader"
 import { setEpisodePending } from "../model/slice"
 
@@ -32,7 +32,7 @@ export const Episodes = () => {
 
   return <>
     <EpHeader {...prepHeaderData} />
-    <Filter />
+    <FilterBar />
     <Content data={prepContentData} />
   </>
 }

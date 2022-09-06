@@ -5,6 +5,14 @@ export const Wrap = styled.div`
   gap: .8em;
   flex-direction: column;
   cursor: pointer;
+
+  border: 4px solid var(--hover-blue);
+  border-radius: 10px;
+`
+
+export const Content = styled.div`
+  display: block;
+  margin: 0 1em 1em;
 `
 
 export const ImgWrap = styled.div`
@@ -26,16 +34,16 @@ export const ImgWrap = styled.div`
   }
 
   @media screen and (max-width: 510px) {
-    height: 450px;
+    height: 350px;
   }
 `
 
 export const Img = styled.img`
-  border-radius: 5px;
   width: 100%;
   height: 100%;
   object-fit: cover;
   transition: all .1s linear;
+  border-radius: 5px;
 `
 
 type TitleType = {
@@ -48,7 +56,7 @@ export const ImgTitle = styled.span<TitleType>`
   top: 0;
   width: fit-content;
   height: auto;
-  opacity: .8;
+  opacity: .9;
 
   padding: 5px 8px;
   margin: 7px 7px 0 0;

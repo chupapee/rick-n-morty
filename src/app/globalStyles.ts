@@ -12,9 +12,9 @@ export const GlobalStyle = createGlobalStyle`
   body {
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     font-size: 16;
-    padding: 15px 30px;
+    padding: 0 15px 15px;
 
-    max-width: 1400px;
+    max-width: 1600px;
     min-width: 300px;
     margin: 0 auto;
   }

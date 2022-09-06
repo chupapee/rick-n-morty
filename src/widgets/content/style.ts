@@ -7,8 +7,9 @@ export const Wrap = styled.div`
   row-gap: 2em;
   padding-top: 1em;
 
-  @media screen and (max-width: 1000px) {
+  @media screen and (max-width: 1100px) {
     grid-template-columns: repeat(3, 1fr);
+    gap: 1em;
   }
 
   @media screen and (max-width: 740px) {
