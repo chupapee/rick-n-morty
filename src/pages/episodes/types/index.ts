@@ -20,8 +20,8 @@ export type PayloadType = {
 export type CharacterType = {
   image: string;
   name: string;
-  status?: string;
+  status: string;
   location: {name: string};
-  gender?: string;
-  species?: string;
+  gender: string;
+  species: string;
 }

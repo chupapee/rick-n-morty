@@ -16,7 +16,7 @@ export const Content = styled.div`
 `
 
 export const ImgWrap = styled.div`
-  height: 300px;
+  height: 350px;
   background-color: var(--bg-blue);
   position: relative;
   border-radius: 5px;

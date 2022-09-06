@@ -16,6 +16,9 @@ const initialState: EpisodeState = {
       name: '',
       image: '',
       location: {name: ''},
+      gender: '',
+      species: '',
+      status: '',
     }
   ],
   isLoading: false,
@@ -44,8 +47,11 @@ export const episodesSlice = createSlice({
       if(payload[0]){
         state.charactersList = payload
       }
+    },
+    setCharacters: (state, { payload }) => {
+      state.charactersList = payload
     }
   },
 });
 
-export const { setEpisodePending, setEpisodeSuccess, setEpCharactersPending, setEpCharactersSuccess } = episodesSlice.actions;
+export const { setEpisodePending, setEpisodeSuccess, setEpCharactersPending, setEpCharactersSuccess, setCharacters } = episodesSlice.actions;
