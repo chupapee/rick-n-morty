@@ -35,6 +35,11 @@ export const ImgWrap = styled.div`
 
   @media screen and (max-width: 510px) {
     height: 350px;
+
+    & div:hover span,
+    div:hover img{
+      transform: none;
+    }
   }
 `
 

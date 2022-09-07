@@ -1,5 +1,5 @@
 import { IPreparedDataType } from "../../app/globalTypes";
-import { Card } from "../card";
+import { Card } from "../contentCard";
 import { Wrap } from "./style";
 
 export const Content: React.FC<{ data: IPreparedDataType[] }> = ({ data }) => {  

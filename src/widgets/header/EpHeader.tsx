@@ -57,10 +57,10 @@ export const EpHeader: React.FC<PropType> = ({name, episode, air_date, detail}) 
         <Title>{detail}</Title>
       </TitleWrap>
       <BtnWrap>
-        <Price choosed={cheapChoosed} onClick={() => choose('cheap')}>
+        <Price tabIndex={Number(choosed)} onClick={() => choose('cheap')}>
           <span>{episode} | {cheapEp.quality}</span><span>{cheapEp.price}$</span>
         </Price>
-        <Price choosed={choosed} onClick={() => choose()}>
+        <Price tabIndex={Number(choosed)} onClick={() => choose()}>
           <span>{episode} | {expensiveEp.quality}</span>{expensiveEp.price}$
         </Price>
         <Button onClick={addToCart} >Add to cart</Button>

@@ -1,10 +1,19 @@
+import { useState } from 'react';
 import { IPreparedDataType } from "../../app/globalTypes";
+import { Modal } from './modal';
 import { Img, ImgWrap, Status, Wrap, ImgTitle, Title, SubTitle, Content } from "./style";
 
 export const Card: React.FC<IPreparedDataType> = ({ image, imageTitle, title, subtitle, detail, moreDetail }) => {
+  const [isModalOpened, setIsModalOpened] = useState(false)
+  
+  const hanldeClick = (image: string) => {
+    setIsModalOpened(true)
+  }
+
   return (
     <Wrap>
-      <ImgWrap>
+      { isModalOpened && <Modal setIsModalOpened={setIsModalOpened} image={image}/> }
+      <ImgWrap onClick={() => hanldeClick(image)}>
         <div>
           <Img src={image} alt="albumIcon" title={imageTitle} />
           <ImgTitle>{imageTitle}</ImgTitle>

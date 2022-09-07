@@ -1,5 +1,5 @@
 import { useAppDispatch, useAppSelector } from "../../../store/types";
-import { Total } from "../../../widgets/card/totalPrice";
+import { Total } from "../../../widgets/cart/totalPrice";
 import { Header } from "../../../widgets/header/Header";
 import { removePurchase } from "../model/slice";
 import { Purchase } from "../types";
