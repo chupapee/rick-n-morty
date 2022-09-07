@@ -1,6 +1,7 @@
 import styled from "styled-components";
 
 export const Wrap = styled.div`
+  color: var(--bg-blue);
   width: calc(100% - 1em);
   padding: 2em 3em 3em 5em;
   margin-bottom: 1em;

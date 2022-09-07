@@ -3,43 +3,58 @@ import styled from "styled-components";
 export const TotalWrap = styled.div`
   font-size: 2rem;
   font-weight: 700;
-  width: 30%;
+  flex: 1;
   display: flex;
   flex-direction: column;
   align-items: center;
   background-color: #f9fafb;
   border: 1px solid var(--light-grey);
   border-radius: 10px;
+  padding: 5vh 0;
+  height: fit-content;
 `;
 
 export const Wrap = styled.div`
-  width: 70%;
-  height: 80%;
+  width: 80%;
   display: flex;
+  gap: 15px;
   flex-direction: column;
   justify-content: space-between;
-  gap: 1rem;
   margin: auto 0;
+
+  @media screen and (max-width: 800px) {
+    width: 90%;
+  }
 `;
 
 export const PriceWrap = styled.div`
   display: flex;
   flex-direction: column;
   gap: 1rem;
+
+  @media screen and (max-width: 600px) {
+    gap: .5rem;
+  }
 `
 
 export const Price = styled.div`
   display: flex;
   justify-content: space-between;
   position: relative;
+  gap: 8px;
+
+  @media screen and (max-width: 600px) {
+    font-size: 1.5rem;
+  }
 `;
 
 export const PayBtn = styled.button`
+  width: fit-content;
   color: #fff;
   font-size: 1.5rem;
-  width: 100%;
   cursor: pointer;
-  padding: 15px 10px;
+  padding: 10px 50px;
+  align-self: flex-end;
   border-radius: 5px;
 
   background-color: var(--hover-blue);
@@ -47,6 +62,10 @@ export const PayBtn = styled.button`
 
   &:hover {
     background-color: var(--dark-blue);
+  }
+
+  @media screen and (max-width: 600px) {
+    padding: 8px 30px;
   }
 `;
 
@@ -64,12 +83,12 @@ export const Discount = styled.div`
   margin-top: 8px;
   
   & input{
+    width: 100%;
     font-size: 1rem;
     background-color: #fff;
     border: solid 2px var(--light-grey);
     border-radius: 5px;
     padding: 15px 8px;
-    width: 70%;
 
     &:focus {
       border-color: var(--dark-blue);
@@ -77,7 +96,6 @@ export const Discount = styled.div`
   }
 
   & button {
-    width: 30%;
     padding: 10px;
     letter-spacing: 2px;
     border-radius: 5px;
@@ -86,6 +104,7 @@ export const Discount = styled.div`
 
     &:hover {
       background-color: var(--hover-blue);
+      color: #fff;
     }
   }
 `;
@@ -95,13 +114,23 @@ export const Promocodes = styled.div`
   flex-direction: column;
   gap: 5px;
   padding: 1rem 0;
-  text-align: justify;
   color: var(--grey);
-  text-decoration: line-through;
   letter-spacing: 2px;
-  font-size: 1.2rem;
+  font-size: 1rem;
+  text-overflow: ellipsis;
+  `
 
+export const Code = styled.div`
+  display: flex;
+  justify-content: space-between;
+  font-weight: normal;
+  font-size: 1rem;
   & span {
-    text-overflow: ellipsis;
+    text-decoration: line-through;
+  }
+
+  & p {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    letter-spacing: 0;
   }
 `

@@ -5,9 +5,6 @@ export const Wrap = styled.div`
   gap: .8em;
   flex-direction: column;
   cursor: pointer;
-
-  border: 4px solid var(--hover-blue);
-  border-radius: 10px;
 `
 
 export const Content = styled.div`
@@ -19,7 +16,6 @@ export const ImgWrap = styled.div`
   height: 350px;
   background-color: var(--bg-blue);
   position: relative;
-  border-radius: 5px;
 
   & div {
     width: 100%;
@@ -48,7 +44,6 @@ export const Img = styled.img`
   height: 100%;
   object-fit: cover;
   transition: all .1s linear;
-  border-radius: 5px;
 `
 
 type TitleType = {

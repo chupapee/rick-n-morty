@@ -1,9 +1,8 @@
 import { useAppDispatch, useAppSelector } from "../../../store/types";
 import { Total } from "../../../widgets/cart/totalPrice";
-import { Header } from "../../../widgets/header/Header";
 import { removePurchase } from "../model/slice";
 import { Purchase } from "../types";
-import { ShopItem, ShopWrap, Wrap } from "./styles";
+import { ShopItem, ShopWrap, Title, Wrap } from "./styles";
 
 export const Cart = () => {
   const dispatch = useAppDispatch()
@@ -15,21 +14,24 @@ export const Cart = () => {
 
   return (
     <>
-      <Header title="Your cart" />
+      <Title>Your cart</Title>
       <Wrap>
         <ShopWrap>
-          {shopList.map(({ episode, quality, price }) => (
+          {shopList.length > 0 ?
+          shopList.map(({ episode, quality, price }) => (
             <ShopItem key={price}>
               <div>
                 <div>
                   <p>{episode}</p>
-                  <p>Quality: {quality}</p>
+                  <h6>{quality}</h6>
                   <span onClick={() => remove({episode, quality, price})}>Remove</span>
                 </div>
               </div>
               <span>{price}$</span>
             </ShopItem>
-          ))}
+          ))
+          : <ShopItem>your cart is empty</ShopItem>
+        }
         </ShopWrap>
         <Total />
       </Wrap>
