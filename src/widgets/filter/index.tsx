@@ -3,7 +3,6 @@ import { Sort } from "./sort"
 import { Wrap } from "./style"
 
 export const FilterBar = () => {
-  
   return (
     <>
       <Wrap>

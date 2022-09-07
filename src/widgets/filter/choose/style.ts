@@ -19,6 +19,13 @@ export const Select = styled.div`
     right: -25px;
     top: 7px;
   }
+
+  @media screen and (max-width: 540px) {
+    & img {
+      top: 15px;
+    }
+  }
+
 `
 
 export const Options = styled.div`
