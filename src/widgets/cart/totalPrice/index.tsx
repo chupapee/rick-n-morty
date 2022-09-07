@@ -6,13 +6,14 @@ import { Code, Discount, DiscountWrap, PayBtn, Price, PriceWrap, Promocodes, Tot
 export const Total = () => {
   const totalPrice = useAppSelector((state) => state.cart.totalPrice);
   const dispatch = useAppDispatch()
+  const purchases = useAppSelector(state => state.cart.shopList)
+
   const [discountCode, setDiscountCode] = useState("");
   const handleDiscount: React.ChangeEventHandler<HTMLInputElement> = (e) => {
     setDiscountCode(e.target.value);
   };
 
   const [promocodes, setPromocode] = React.useState<string[]>([]);
-
   const handlePromo = () => {
     if(promocodes.includes(discountCode)) return
     // if (discountCode === "WABBA LABA DUB DUB") {
@@ -22,11 +23,14 @@ export const Total = () => {
       dispatch(setTotalPrice(newPrice))
     // }
   };
-
   const handleKeyDown: React.KeyboardEventHandler<HTMLInputElement> = (e) => {
     if(e.code === 'Enter'){
       handlePromo()
     }
+  }
+
+  const handleCheckout = () => {
+    // dispatch(setPurchases(purchases))
   }
 
   return (
@@ -63,7 +67,7 @@ export const Total = () => {
               <span>Total:</span>
               <span>{totalPrice}$</span>
             </Price>
-            <PayBtn title="pay for the purchases">Pay</PayBtn>
+            <PayBtn onClick={handleCheckout} to={'/payment'} title="pay for the purchases">Checkout</PayBtn>
           </PriceWrap>
         </Wrap>
       </TotalWrap>

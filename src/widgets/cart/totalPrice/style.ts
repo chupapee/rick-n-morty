@@ -1,3 +1,4 @@
+import { NavLink } from "react-router-dom";
 import styled from "styled-components";
 
 export const TotalWrap = styled.div`
@@ -48,13 +49,14 @@ export const Price = styled.div`
   }
 `;
 
-export const PayBtn = styled.button`
-  width: fit-content;
+export const PayBtn = styled(NavLink)`
+  width: 100%;
   color: #fff;
+  text-decoration: none;
   font-size: 1.5rem;
   cursor: pointer;
   padding: 10px 50px;
-  align-self: flex-end;
+  text-align: center;
   border-radius: 5px;
 
   background-color: var(--hover-blue);

@@ -5,7 +5,7 @@ export const Wrap = styled.div`
   width: calc(100% - 1em);
   padding: 2em 3em 3em 5em;
   margin-bottom: 1em;
-  border: 3px var(--grey) solid;
+  border: 3px var(--bg-blue) solid;
   box-shadow: 1em 1em var(--bg-blue);
 
   display: flex;
@@ -74,7 +74,7 @@ export const Price = styled.div`
   gap: 1em;
 
   padding: 1em 1.3em;
-  border: 2px solid var(--grey);
+  border: 2px solid var(--bg-blue);
   transition: .1s linear;
   &:hover {
     border-color: var(--hover-blue);
@@ -93,6 +93,7 @@ export const Price = styled.div`
 
 export const Button = styled.button`
   font-size: 1.2em;
+  color: #fff;
   text-align: center;
   cursor: pointer;
   padding: 1rem;
@@ -102,6 +103,7 @@ export const Button = styled.button`
 
   &:hover {
     background-color: #fff;
+    color: var(--bg-blue);
   }
 
   @media screen and (max-width: 735px) {
