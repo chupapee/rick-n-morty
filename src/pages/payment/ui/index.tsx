@@ -7,7 +7,7 @@ export const Payment: React.FC<{closePayment: () => void}> = ({closePayment}) =>
   const totalPrice = useAppSelector((state) => state.cart.totalPrice);
 
   return (
-    <Wrap>
+    <Wrap onClick={() => closePayment()}>
       {totalPrice ? (
         <>
           <PaymentForm closePayment={closePayment} price={totalPrice} />

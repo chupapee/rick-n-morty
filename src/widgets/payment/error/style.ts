@@ -28,11 +28,11 @@ export const Wrap = styled.div`
 
   @media screen and (max-width: 900px) {
     font-size: 1rem;
-    padding: 1rem 1.8rem;
+    padding: 2.5rem 1.8rem;
   }
 
   @media screen and (max-width: 600px) {
-    width: 90%;
+    width: 95%;
   }
   `
 

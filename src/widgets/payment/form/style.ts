@@ -8,11 +8,12 @@ export const Wrap = styled.div`
   align-items: center;
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
   font-size: 2rem;
+  padding-top: 20vh;
 `
 
 export const Form = styled.div`
   max-width: 600px;
-  width: 90%;
+  width: 95%;
   display: flex;
   align-items: center;
   padding: 2rem 4rem;
@@ -23,6 +24,9 @@ export const Form = styled.div`
 
   & p {
     margin-bottom: 10px;
+    letter-spacing: 1px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: var(--bg-blue);
   }
 
   & form {
@@ -41,12 +45,12 @@ export const Form = styled.div`
     padding: 1rem 1rem;
     
     &:focus {
-      border: 2px solid var(--bg-blue);
+      border: 2px solid var(--hover-blue);
     }
   }
 
   @media screen and (max-width: 550px){
-    padding: 2rem;
+    padding: 2rem 1rem;
     font-size: 1.5rem;
 
     & input {

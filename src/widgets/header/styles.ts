@@ -97,13 +97,18 @@ export const Button = styled.button`
   text-align: center;
   cursor: pointer;
   padding: 1rem;
-  background-color: var(--hover-blue);
-  border: 2px solid var(--hover-blue);
   transition: 0.1s linear;
 
+  background: linear-gradient(to right, var(--dark-blue) 50%, var(--hover-blue) 50%);
+  background-size: 200% 100%;
+  background-position: right bottom;
+
+  &:disabled {
+    background-position: left bottom;
+  }
+
   &:hover {
-    background-color: #fff;
-    color: var(--bg-blue);
+    background-color: var(--dark-blue);
   }
 
   @media screen and (max-width: 735px) {

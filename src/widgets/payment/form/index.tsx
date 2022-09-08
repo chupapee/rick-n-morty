@@ -22,12 +22,12 @@ export const PaymentForm: React.FC<{price: number, closePayment: () => void}> = 
         dispatch(clearShopList())
       }, 1500)
     }
-  }, [paid, closePayment, navigate])
+  }, [paid, closePayment, navigate, dispatch])
 
   return (
     <>
-      <Wrap>
-        <Form>
+      <Wrap onClick={() => closePayment()}>
+        <Form onClick={e => e.stopPropagation()}>
             <p>Payment card</p>
           <form onSubmit={handleSubmit}>
             <label htmlFor="number">

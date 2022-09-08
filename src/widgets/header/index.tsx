@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { addPurchase } from "../../pages/cart/model/slice";
 import { Purchase } from "../../pages/cart/types";
 import { useAppDispatch } from "../../store/types";
@@ -39,7 +40,22 @@ export const EpHeader: React.FC<PropType> = ({name, episode, air_date, detail}) 
     }
   }
 
+  const [disabled, setDisabled] = useState(false)
+  const navigate = useNavigate()
+
+  const startAnim = () => {
+    setDisabled(true)
+
+    setTimeout(() => {
+      navigate('/cart')
+    }, 500)
+    setTimeout(() => {
+      setDisabled(false)
+    }, 600)
+  }
+
   const addToCart = () => {
+    startAnim()
     if(choosed) {
       dispatch(addPurchase(expensiveEp))
     } else {
@@ -63,7 +79,7 @@ export const EpHeader: React.FC<PropType> = ({name, episode, air_date, detail}) 
         <Price tabIndex={Number(choosed)} onClick={() => choose()}>
           <span>{episode} | {expensiveEp.quality}</span>{expensiveEp.price}$
         </Price>
-        <Button onClick={addToCart} >Add to cart</Button>
+        <Button disabled={disabled} onClick={addToCart} >Add to cart</Button>
       </BtnWrap>
     </Wrap>
   </>
