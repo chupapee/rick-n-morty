@@ -28,7 +28,7 @@ export const PaymentForm: React.FC<{price: number, closePayment: () => void}> = 
     <>
       <Wrap>
         <Form>
-            Payment card
+            <p>Payment card</p>
           <form onSubmit={handleSubmit}>
             <label htmlFor="number">
               <input

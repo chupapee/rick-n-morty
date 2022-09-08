@@ -1,6 +1,7 @@
 import styled from "styled-components";
 
 export const Wrap = styled.div`
+  width: 100%;
   min-height: 50vh;
   display: flex;
   justify-content: center;
@@ -10,7 +11,8 @@ export const Wrap = styled.div`
 `
 
 export const Form = styled.div`
-  width: 500px;
+  max-width: 600px;
+  width: 90%;
   display: flex;
   align-items: center;
   padding: 2rem 4rem;
@@ -18,6 +20,10 @@ export const Form = styled.div`
   border: 1px solid var(--light-grey);
   border-radius: 5px;
   background-color: #fff;
+
+  & p {
+    margin-bottom: 10px;
+  }
 
   & form {
     display: flex;
@@ -38,10 +44,22 @@ export const Form = styled.div`
       border: 2px solid var(--bg-blue);
     }
   }
-  `
+
+  @media screen and (max-width: 550px){
+    padding: 2rem;
+    font-size: 1.5rem;
+
+    & input {
+      font-size: .8rem;
+      padding: .7rem;
+      margin: 5px 0;
+    }
+  }
+`
 
 export const PayBtn = styled.button`
   font-size: 1rem;
+  font-weight: 600;
   letter-spacing: 2px;
   cursor: pointer;
   padding: 15px 20px;
@@ -62,4 +80,10 @@ export const PayBtn = styled.button`
     color: white;
     border: 2px solid lightgreen;
   }
+
+  @media screen and (max-width: 550px){
+    font-size: .9rem;
+    padding: 15px 10px;
+  }
 `
+

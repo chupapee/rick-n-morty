@@ -17,4 +17,24 @@ export const Wrap = styled.div`
     width: 30px;
     height: 30px;
   }
+
+  @media screen and (max-width: 750px) { 
+    & span {
+      font-size: 1.2em;
+    }
+    & img {
+      width: 15px;
+      height: 15px;
+    }
+  }
+  @media screen and (max-width: 360px) {
+    & span {
+      font-size: 1em;
+    }
+  }
+  @media screen and (max-width: 320px) {
+    & span {
+      letter-spacing: 0;
+    }
+  }
 `
