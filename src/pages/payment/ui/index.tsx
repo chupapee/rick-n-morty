@@ -1,9 +1,22 @@
-import { Wrap } from "./style"
+import { useAppSelector } from "../../../store/types";
+import { Error } from "../../../widgets/payment/error";
+import { PaymentForm } from "../../../widgets/payment/form";
+import { Wrap } from "./style";
 
 export const Payment = () => {
+  const totalPrice = useAppSelector((state) => state.cart.totalPrice);
+
   return (
     <Wrap>
-      sadsa
+      {totalPrice ? (
+        <>
+          <PaymentForm price={totalPrice} />
+        </>
+      ) : (
+        <>
+          <Error />
+        </>
+      )}
     </Wrap>
-  )
-}
+  );
+};

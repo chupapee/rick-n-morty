@@ -1,12 +1,11 @@
 import React, { useState } from "react";
-import { setTotalPrice } from "../../../pages/cart/model/slice";
-import { useAppDispatch, useAppSelector } from "../../../store/types";
+import { setTotalPrice } from "../../pages/cart/model/slice";
+import { useAppDispatch, useAppSelector } from "../../store/types";
 import { Code, Discount, DiscountWrap, PayBtn, Price, PriceWrap, Promocodes, TotalWrap, Wrap } from "./style";
 
 export const Total = () => {
   const totalPrice = useAppSelector((state) => state.cart.totalPrice);
   const dispatch = useAppDispatch()
-  const purchases = useAppSelector(state => state.cart.shopList)
 
   const [discountCode, setDiscountCode] = useState("");
   const handleDiscount: React.ChangeEventHandler<HTMLInputElement> = (e) => {
@@ -27,10 +26,6 @@ export const Total = () => {
     if(e.code === 'Enter'){
       handlePromo()
     }
-  }
-
-  const handleCheckout = () => {
-    // dispatch(setPurchases(purchases))
   }
 
   return (
@@ -67,7 +62,7 @@ export const Total = () => {
               <span>Total:</span>
               <span>{totalPrice}$</span>
             </Price>
-            <PayBtn onClick={handleCheckout} to={'/payment'} title="pay for the purchases">Checkout</PayBtn>
+            <PayBtn to={'/payment'} title="pay for the purchases">Checkout</PayBtn>
           </PriceWrap>
         </Wrap>
       </TotalWrap>

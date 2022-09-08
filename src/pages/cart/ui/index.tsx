@@ -1,5 +1,5 @@
 import { useAppDispatch, useAppSelector } from "../../../store/types";
-import { Total } from "../../../widgets/cart/totalPrice";
+import { Total } from "../../../widgets/cart";
 import { removePurchase } from "../model/slice";
 import { Purchase } from "../types";
 import { ShopItem, ShopWrap, Title, Wrap } from "./styles";
