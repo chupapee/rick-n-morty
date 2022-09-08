@@ -48,18 +48,19 @@ export const EpHeader: React.FC<PropType> = ({name, episode, air_date, detail}) 
 
     setTimeout(() => {
       navigate('/cart')
-    }, 500)
+    }, 1000)
     setTimeout(() => {
       setDisabled(false)
-    }, 600)
+    }, 1001)
   }
 
   const addToCart = () => {
-    startAnim()
     if(choosed) {
+      startAnim()
       dispatch(addPurchase(expensiveEp))
     } else {
       if(cheapChoosed) {
+        startAnim()
         dispatch(addPurchase(cheapEp))
       } else return
     }
@@ -79,7 +80,7 @@ export const EpHeader: React.FC<PropType> = ({name, episode, air_date, detail}) 
         <Price tabIndex={Number(choosed)} onClick={() => choose()}>
           <span>{episode} | {expensiveEp.quality}</span>{expensiveEp.price}$
         </Price>
-        <Button disabled={disabled} onClick={addToCart} >Add to cart</Button>
+        <Button disabled={disabled} onClick={addToCart}>{disabled ? 'Adding...' : 'Add to cart'}</Button>
       </BtnWrap>
     </Wrap>
   </>

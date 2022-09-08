@@ -60,7 +60,7 @@ export const PaymentForm: React.FC<{price: number, closePayment: () => void}> = 
                 pattern='[0-9]{3,4}'
               />
             </label>
-            <PayBtn disabled={paid}>{paid ? 'Paying' : `Pay ${price}$`}</PayBtn>
+            <PayBtn disabled={paid}>{paid ? 'Paying...' : `Pay ${price}$`}</PayBtn>
           </form>
         </Form>
       </Wrap>

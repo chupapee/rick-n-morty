@@ -102,13 +102,14 @@ export const Button = styled.button`
   background: linear-gradient(to right, var(--dark-blue) 50%, var(--hover-blue) 50%);
   background-size: 200% 100%;
   background-position: right bottom;
+  transition: all 1s ease-out;
 
   &:disabled {
     background-position: left bottom;
   }
 
   &:hover {
-    background-color: var(--dark-blue);
+    background-position: left bottom;
   }
 
   @media screen and (max-width: 735px) {
