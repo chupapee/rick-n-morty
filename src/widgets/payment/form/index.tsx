@@ -1,21 +1,28 @@
 import { useState, useEffect } from 'react'
+import { useNavigate } from 'react-router-dom';
+import { clearShopList } from '../../../pages/cart/model/slice';
+import { useAppDispatch } from '../../../store/types';
 import { Form, PayBtn, Wrap } from "./style";
 
 export const PaymentForm: React.FC<{price: number, closePayment: () => void}> = ({price, closePayment}) => {
   const [paid, setPaid] = useState(false)
+  const navigate = useNavigate()
+  const dispatch = useAppDispatch()
 
   const handleSubmit: React.FormEventHandler<HTMLFormElement> = (e) => {
     e.preventDefault()
     setPaid(true)
   };
-
+  
   useEffect(() => {
     if(paid){
       setTimeout(() => {
         closePayment()
+        navigate('/order')
+        dispatch(clearShopList())
       }, 1500)
     }
-  }, [paid, closePayment])
+  }, [paid, closePayment, navigate])
 
   return (
     <>

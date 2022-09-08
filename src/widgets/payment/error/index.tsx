@@ -4,7 +4,7 @@ export const Error = () => {
   return (
     <Wrap>
       <p>Your cart is empty</p>
-      Add anything to the cart to continue.
+      <span>Add anything to the cart to continue.</span>
       <BackBtn to={"/episodes"}>Go back to store</BackBtn>
     </Wrap>
   );

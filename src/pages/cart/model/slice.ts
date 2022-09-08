@@ -43,8 +43,12 @@ export const cartSlice = createSlice({
     },
     setTotalPrice: (state, {payload}: PayloadAction<number>) => {
       state.totalPrice = payload
+    },
+    clearShopList: (state) => {
+      state.shopList = []
+      state.totalPrice = 0
     }
   }
 })
 
-export const { addPurchase, removePurchase, setTotalPrice } = cartSlice.actions;
+export const { addPurchase, removePurchase, setTotalPrice, clearShopList } = cartSlice.actions;

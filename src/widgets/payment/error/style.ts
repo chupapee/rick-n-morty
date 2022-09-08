@@ -16,9 +16,14 @@ export const Wrap = styled.div`
   width: fit-content;
   margin: 0 auto;
   margin-top: 20vh;
+  background-color: #fff;
 
   & p {
     font-weight: 700;
+  }
+
+  & span {
+    font-weight: 300;
   }
 
   @media screen and (max-width: 900px) {
