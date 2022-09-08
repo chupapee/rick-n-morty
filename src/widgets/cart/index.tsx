@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { setTotalPrice } from "../../pages/cart/model/slice";
+import { Payment } from "../../pages/payment/ui";
 import { useAppDispatch, useAppSelector } from "../../store/types";
 import { Code, Discount, DiscountWrap, PayBtn, Price, PriceWrap, Promocodes, TotalWrap, Wrap } from "./style";
 
@@ -26,6 +27,16 @@ export const Total = () => {
     if(e.code === 'Enter'){
       handlePromo()
     }
+  }
+
+  const [isActivePayment, setIsActivePayment] = useState(false)
+
+  const activePayment = () => {
+    setIsActivePayment(true)
+  }
+
+  const closePayment = () => {
+    setIsActivePayment(false)
   }
 
   return (
@@ -62,9 +73,10 @@ export const Total = () => {
               <span>Total:</span>
               <span>{totalPrice}$</span>
             </Price>
-            <PayBtn to={'/payment'} title="pay for the purchases">Checkout</PayBtn>
+            <PayBtn onClick={activePayment} title="pay for the purchases">Checkout</PayBtn>
           </PriceWrap>
         </Wrap>
+        {isActivePayment && <Payment closePayment={closePayment} />}
       </TotalWrap>
     </>
   );

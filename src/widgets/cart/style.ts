@@ -1,4 +1,3 @@
-import { NavLink } from "react-router-dom";
 import styled from "styled-components";
 
 export const TotalWrap = styled.div`
@@ -49,7 +48,7 @@ export const Price = styled.div`
   }
 `;
 
-export const PayBtn = styled(NavLink)`
+export const PayBtn = styled.button`
   width: 100%;
   color: #fff;
   text-decoration: none;

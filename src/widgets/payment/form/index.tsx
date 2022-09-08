@@ -1,10 +1,8 @@
 import { useState, useEffect } from 'react'
-import { useNavigate } from 'react-router-dom';
 import { Form, PayBtn, Wrap } from "./style";
 
-export const PaymentForm: React.FC<{price: number}> = ({price}) => {
+export const PaymentForm: React.FC<{price: number, closePayment: () => void}> = ({price, closePayment}) => {
   const [paid, setPaid] = useState(false)
-  const navigateTo = useNavigate()
 
   const handleSubmit: React.FormEventHandler<HTMLFormElement> = (e) => {
     e.preventDefault()
@@ -14,10 +12,10 @@ export const PaymentForm: React.FC<{price: number}> = ({price}) => {
   useEffect(() => {
     if(paid){
       setTimeout(() => {
-        navigateTo('/success')
+        closePayment()
       }, 1500)
     }
-  }, [paid, navigateTo])
+  }, [paid, closePayment])
 
   return (
     <>
@@ -55,7 +53,7 @@ export const PaymentForm: React.FC<{price: number}> = ({price}) => {
                 pattern='[0-9]{3,4}'
               />
             </label>
-            <PayBtn disabled={paid}>{paid ? 'Paing' : `Pay ${price}$`}</PayBtn>
+            <PayBtn disabled={paid}>{paid ? 'Paying' : `Pay ${price}$`}</PayBtn>
           </form>
         </Form>
       </Wrap>

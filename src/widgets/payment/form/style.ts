@@ -17,6 +17,7 @@ export const Form = styled.div`
   flex-direction: column;
   border: 1px solid var(--light-grey);
   border-radius: 5px;
+  background-color: #fff;
 
   & form {
     display: flex;
