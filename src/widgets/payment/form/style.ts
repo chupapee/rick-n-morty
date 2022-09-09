@@ -75,11 +75,6 @@ export const PayBtn = styled.button`
   background-position: right bottom;
   transition: all 1s ease-out;
 
-  &:hover, &:focus {
-    background-position: left bottom;
-    border-color: lightgreen;
-  }
-
   &:disabled {
     background-position: left bottom;
     color: black;

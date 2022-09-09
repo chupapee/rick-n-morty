@@ -1,6 +1,16 @@
+import { useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import { Wrap } from "./style";
 
 export const Order = () => {
+  const navigate = useNavigate()
+
+  useEffect(() => {
+    setTimeout(() => {
+      navigate('/episodes')
+    }, 3000)
+  }, [navigate])
+  
   return (
     <>
     <Wrap>

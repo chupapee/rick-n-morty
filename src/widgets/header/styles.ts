@@ -108,10 +108,6 @@ export const Button = styled.button`
     background-position: left bottom;
   }
 
-  &:hover {
-    background-position: left bottom;
-  }
-
   @media screen and (max-width: 735px) {
     padding: .6rem;
   }
