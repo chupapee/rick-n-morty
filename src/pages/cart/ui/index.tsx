@@ -18,8 +18,8 @@ export const Cart = () => {
       <Wrap>
         <ShopWrap>
           {shopList.length > 0 ?
-          shopList.map(({ episode, quality, price }) => (
-            <ShopItem key={price}>
+          shopList.map(({ episode, quality, price }, index) => (
+            <ShopItem key={index}>
               <div>
                 <div>
                   <p>{episode}</p>
