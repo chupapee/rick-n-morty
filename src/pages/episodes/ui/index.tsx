@@ -3,13 +3,12 @@ import { IPreparedDataType } from "../../../app/globalTypes"
 import { useAppDispatch, useAppSelector } from "../../../store/types"
 import { Content } from "../../../widgets/content"
 import { FilterBar } from "../../../widgets/filter"
-import { EpHeader } from "../../../widgets/header"
+import { Header } from "../../../widgets/header"
 import { setEpisodePending } from "../model/slice"
 
 export const Episodes = () => {
   const episodeData = useAppSelector(state => state.episode.episodeInfo)
   const contentData = useAppSelector(state => state.episode.charactersList)
-  const isBought = useAppSelector(state => state.episode.isBought)
   const id = useAppSelector(state => state.episode.id)
   const dispatch = useAppDispatch()
 
@@ -30,12 +29,11 @@ export const Episodes = () => {
     name: episodeData[0].name,
     episode: episodeData[0].episode,
     air_date: episodeData[0].air_date,
-    isBought: isBought,
     id: id,
   }
 
   return <>
-    <EpHeader {...prepHeaderData} />
+    <Header {...prepHeaderData} />
     <FilterBar />
     <Content data={prepContentData} />
   </>

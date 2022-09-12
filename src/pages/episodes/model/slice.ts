@@ -23,7 +23,6 @@ const initialState: EpisodeState = {
   ],
   isLoading: false,
   error: '',
-  isBought: false,
   id: 1,
 };
 

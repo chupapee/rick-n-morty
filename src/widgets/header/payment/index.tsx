@@ -1,5 +1,4 @@
 import { useState } from 'react'
-import { useNavigate } from 'react-router-dom';
 import { addPurchase } from '../../../pages/cart/model/slice';
 import { Purchase } from '../../../pages/cart/types';
 import { useAppDispatch } from "../../../store/types";
@@ -41,26 +40,26 @@ export const Payment: React.FC<PropType> = ({ episode, id }) => {
   }
 
   const [disabled, setDisabled] = useState(false)
-  const navigate = useNavigate()
 
   const startAnim = () => {
     setDisabled(true)
     setTimeout(() => {
-      navigate('/cart')
-    }, 1000)
-    setTimeout(() => {
       setDisabled(false)
-    }, 1001)
+    }, 1201)
   }
 
   const addToCart = () => {
     if(choosed) {
       startAnim()
-      dispatch(addPurchase(expensiveEp))
+      setTimeout(() => {
+        dispatch(addPurchase(expensiveEp))
+      }, 1200)
     } else {
       if(cheapChoosed) {
         startAnim()
-        dispatch(addPurchase(cheapEp))
+        setTimeout(() => {
+          dispatch(addPurchase(cheapEp))
+        }, 1200)
       } else return
     }
   }

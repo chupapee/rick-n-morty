@@ -1,6 +1,10 @@
 import styled from "styled-components";
 
-export const Wrap = styled.div`
+type CartContains = {
+  isOnCart: boolean;
+}
+
+export const Wrap = styled.div<CartContains>`
   color: var(--bg-blue);
   width: calc(100% - 1em);
   padding: 2em 3em 3em 5em;
@@ -9,7 +13,8 @@ export const Wrap = styled.div`
   box-shadow: 1em 1em var(--bg-blue);
 
   display: flex;
-  justify-content: space-between;
+  justify-content: ${({ isOnCart }) => ( isOnCart ? 'center' : 'space-between' )};
+  text-align: ${({ isOnCart }) => ( isOnCart ? 'center' : 'default' )};
   gap: 1.5rem;
 
   @media screen and (max-width: 960px) {

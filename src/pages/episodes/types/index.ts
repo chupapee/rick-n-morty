@@ -10,7 +10,6 @@ export type EpisodeState = {
   charactersList: CharacterType[];
   isLoading: boolean;
   error: string;
-  isBought: boolean;
   id: number;
 };
 
