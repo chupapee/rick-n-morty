@@ -1,5 +1,6 @@
 export type Purchase = {
   episode: string;
   quality: string;
-  price: number;  
+  price: number;
+  id: number;
 }

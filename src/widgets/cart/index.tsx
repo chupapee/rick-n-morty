@@ -4,7 +4,7 @@ import { Payment } from "../../pages/payment/ui";
 import { useAppDispatch, useAppSelector } from "../../store/types";
 import { Code, Discount, DiscountWrap, PayBtn, Price, PriceWrap, Promocodes, TotalWrap, Wrap } from "./style";
 
-export const Total = () => {
+export const Total = () => {  
   const totalPrice = useAppSelector((state) => state.cart.totalPrice);
   const dispatch = useAppDispatch()
 
@@ -16,12 +16,12 @@ export const Total = () => {
   const [promocodes, setPromocode] = React.useState<string[]>([]);
   const handlePromo = () => {
     if(promocodes.includes(discountCode)) return
-    // if (discountCode === "WABBA LABA DUB DUB") {
+    if (discountCode === "WABBA LABA DUB DUB") {
       let newPromos = [...promocodes, discountCode];
       setPromocode(newPromos);
       let newPrice = parseFloat((totalPrice / 2).toFixed(2))
       dispatch(setTotalPrice(newPrice))
-    // }
+    }
   };
   const handleKeyDown: React.KeyboardEventHandler<HTMLInputElement> = (e) => {
     if(e.code === 'Enter'){
@@ -30,11 +30,9 @@ export const Total = () => {
   }
 
   const [isActivePayment, setIsActivePayment] = useState(false)
-
   const activePayment = () => {
     setIsActivePayment(true)
   }
-
   const closePayment = () => {
     setIsActivePayment(false)
   }

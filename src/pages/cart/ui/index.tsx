@@ -18,13 +18,13 @@ export const Cart = () => {
       <Wrap>
         <ShopWrap>
           {shopList.length > 0 ?
-          shopList.map(({ episode, quality, price }, index) => (
+          shopList.map(({ episode, quality, price, id }, index) => (
             <ShopItem key={index}>
               <div>
                 <div>
                   <p>{episode}</p>
                   <h6>{quality}</h6>
-                  <span onClick={() => remove({episode, quality, price})}>Remove</span>
+                  <span onClick={() => remove({episode, quality, price, id})}>Remove</span>
                 </div>
               </div>
               <span>{price}$</span>

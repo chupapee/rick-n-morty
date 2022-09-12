@@ -22,7 +22,9 @@ const initialState: EpisodeState = {
     }
   ],
   isLoading: false,
-  error: ''
+  error: '',
+  isBought: false,
+  id: 1,
 };
 
 export const episodesSlice = createSlice({
@@ -50,8 +52,11 @@ export const episodesSlice = createSlice({
     },
     setCharacters: (state, { payload }) => {
       state.charactersList = payload
+    },
+    setEpisodeId: (state, { payload }: PayloadAction<number>) => {
+      state.id = payload
     }
   },
 });
 
-export const { setEpisodePending, setEpisodeSuccess, setEpCharactersPending, setEpCharactersSuccess, setCharacters } = episodesSlice.actions;
+export const { setEpisodePending, setEpisodeSuccess, setEpCharactersPending, setEpCharactersSuccess, setCharacters, setEpisodeId } = episodesSlice.actions;

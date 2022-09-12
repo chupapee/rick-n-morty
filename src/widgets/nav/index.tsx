@@ -10,6 +10,9 @@ export const Header: React.FC = (): React.ReactElement => {
           <LinksWrap>
             <NavbarLink to="/episodes">Episodes</NavbarLink>
           </LinksWrap>
+          <LinksWrap>
+            <NavbarLink to="/orders">Orders</NavbarLink>
+          </LinksWrap>
           <LinksWrap gap={'.5em'} >
             <NavbarLink to="/cart">
               <Icon length={shopLength} />

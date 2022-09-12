@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { useAppDispatch } from "../../../store/types";
-import { setEpisodePending } from "../../../pages/episodes/model/slice";
+import { setEpisodeId, setEpisodePending } from "../../../pages/episodes/model/slice";
 import { MakeEpisodesName } from "./makeEpisodesName";
 import { Options, Select } from "./style";
 
@@ -14,6 +14,7 @@ export const Choose = () => {
 
   const chooseEpisode = (id: number) => {
     dispatch(setEpisodePending(id))
+    dispatch(setEpisodeId(id))
     setOpened(false)
   }
   

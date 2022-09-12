@@ -10,9 +10,11 @@ type PropType = {
   episode: string;
   air_date: string;
   detail?: string;
+  isBought: boolean;
+  id: number;
 }
 
-export const EpHeader: React.FC<PropType> = ({name, episode, air_date, detail}) => { 
+export const EpHeader: React.FC<PropType> = ({name, episode, air_date, detail, isBought, id}) => { 
   const dispatch = useAppDispatch()
   const [cheapChoosed, setCheapChoosed] = useState(false)
   const [choosed, setChoosed] = useState(false)
@@ -21,12 +23,14 @@ export const EpHeader: React.FC<PropType> = ({name, episode, air_date, detail}) 
     episode: episode,
     quality: '720p',
     price: 2.99,
+    id: id,
   }
 
   const expensiveEp: Purchase = {
     episode: episode,
     quality: 'HD',
     price: 5.99,
+    id: id,
   }
 
   const choose = (value?: string) => {
@@ -73,6 +77,7 @@ export const EpHeader: React.FC<PropType> = ({name, episode, air_date, detail}) 
         <Title>Air date: {air_date}</Title>
         <Title>{detail}</Title>
       </TitleWrap>
+      {!isBought &&
       <BtnWrap>
         <Price tabIndex={Number(choosed)} onClick={() => choose('cheap')}>
           <span>{episode} | {cheapEp.quality}</span><span>{cheapEp.price}$</span>
@@ -82,6 +87,7 @@ export const EpHeader: React.FC<PropType> = ({name, episode, air_date, detail}) 
         </Price>
         <Button disabled={disabled} onClick={addToCart}>{disabled ? 'Adding...' : 'Add to cart'}</Button>
       </BtnWrap>
+      }
     </Wrap>
   </>
 }
