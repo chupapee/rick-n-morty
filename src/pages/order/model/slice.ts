@@ -13,7 +13,7 @@ export const ordersSlice = createSlice({
   initialState,
   reducers: {
     addOrders: (state, { payload }: PayloadAction<number[]>) => {
-      state.idList.push(1)
+      state.idList.push(...payload)
     }
   }
 })

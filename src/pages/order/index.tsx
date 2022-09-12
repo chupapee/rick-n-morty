@@ -1,8 +1,12 @@
 import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+import { useAppSelector } from "../../store/types";
 import { Wrap } from "./style";
 
 export const Orders = () => {
+  const orders = useAppSelector(state => state.orders)
+  console.log(orders.idList);
+  
   const navigate = useNavigate()
 
   // useEffect(() => {
