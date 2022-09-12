@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 type CartContains = {
-  isOnCart: boolean;
+  isBought: boolean;
 }
 
 export const Wrap = styled.div<CartContains>`
@@ -13,8 +13,8 @@ export const Wrap = styled.div<CartContains>`
   box-shadow: 1em 1em var(--bg-blue);
 
   display: flex;
-  justify-content: ${({ isOnCart }) => ( isOnCart ? 'center' : 'space-between' )};
-  text-align: ${({ isOnCart }) => ( isOnCart ? 'center' : 'default' )};
+  justify-content: ${({ isBought }) => ( isBought ? 'center' : 'space-between' )};
+  text-align: ${({ isBought }) => ( isBought ? 'center' : 'default' )};
   gap: 1.5rem;
 
   @media screen and (max-width: 960px) {

@@ -11,17 +11,20 @@ type PropType = {
 }
 
 export const Header: React.FC<PropType> = ({name, episode, air_date, detail, id}) => { 
-  const purchases = useAppSelector(state => state.cart.shopList)
-  const isOnCart = purchases.some(item => item.id === id)
+  const cartList = useAppSelector(state => state.cart.shopList)
+  const orders = useAppSelector(state => state.orders.idList)
+  const isOnCart = cartList.some(item => item.id === id)
+  const isOnOrders = orders.some(item => item === id)  
   
   return <>
-    <Wrap isOnCart={isOnCart}>
+    <Wrap isBought={isOnCart || isOnOrders}>
       <TitleWrap>
         <Title>Title: {name}</Title>
         <Title>Air date: {air_date}</Title>
         <Title>{detail}</Title>
+        <Title>{episode}</Title>
       </TitleWrap>
-      {!isOnCart &&
+      {!isOnOrders && !isOnCart &&
         <Payment episode={episode} id={id} />
       }
     </Wrap>

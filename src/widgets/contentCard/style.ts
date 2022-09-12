@@ -7,11 +7,6 @@ export const Wrap = styled.div`
   cursor: pointer;
 `
 
-export const Content = styled.div`
-  display: block;
-  margin: 0 1em 1em;
-`
-
 export const ImgWrap = styled.div`
   height: 350px;
   background-color: var(--bg-blue);
@@ -96,7 +91,7 @@ type Detail = {
   gender?: string;
 }
 
-export const Title = styled.p<Detail>`
+export const Title = styled.div<Detail>`
   font-size: 1.3rem;
   font-weight: 600;
   display: flex;
