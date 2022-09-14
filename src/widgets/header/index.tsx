@@ -19,10 +19,10 @@ export const Header: React.FC<PropType> = ({name, episode, air_date, detail, id}
   return <>
     <Wrap isBought={isOnCart || isOnOrders}>
       <TitleWrap>
-        <Title>Title: {name}</Title>
-        <Title>Air date: {air_date}</Title>
-        <Title>{detail}</Title>
-        <Title>{episode}</Title>
+        {name && <Title>Title: {name}</Title>}
+        {air_date && <Title>Air date: {air_date}</Title>}
+        {detail && <Title>{detail}</Title>}
+        {episode && <Title>{episode}</Title>}
       </TitleWrap>
       {!isOnOrders && !isOnCart &&
         <Payment episode={episode} id={id} />

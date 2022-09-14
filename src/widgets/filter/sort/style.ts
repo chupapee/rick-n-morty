@@ -13,6 +13,8 @@ export const Wrap = styled.div`
 `
 
 export const List = styled.ul`
+  font-weight: 600;
+  color: var(--bg-blue);
   display: flex;
   flex-wrap: wrap;
   justify-content: center;

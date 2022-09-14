@@ -6,8 +6,8 @@ export const FilterBar = () => {
   return (
     <>
       <Wrap>
-      <Choose />
-      <Sort />
+        <Choose />
+        <Sort />
       </Wrap>
     </>
   )

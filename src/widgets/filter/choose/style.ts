@@ -2,65 +2,74 @@ import styled from "styled-components"
 
 export const Select = styled.div`
   display: flex;
-  flex-direction: column;
-  width: fit-content;
+  gap: .5%;
+  width: 100%;
   cursor: pointer;
   position: relative;
+  text-align: center;
 
-  & p:hover {
-    color: var(--hover-blue);
-  }
+  & button {
+    width: 5%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    background-color: #fff;
 
-  & img {
-    z-index: 5;
-    width: 15px;
-    height: 15px;
-    position: absolute;
-    right: -25px;
-    top: 7px;
-  }
+    & svg {
+      max-width: 100%;
+      height: 100%;
+      fill: var(--bg-blue);
+    }
 
-  @media screen and (max-width: 540px) {
-    & img {
-      top: 15px;
+    & svg:hover {
+      fill: var(--hover-blue);
     }
   }
-
 `
 
-export const Options = styled.div`
+type TranslateType = {
+  translateTo: number;
+}
+
+export const Options = styled.div<TranslateType>`
   background-color: #fff;
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  position: absolute;
-  left: 0;
-  top: calc(100% + 10px);
-  box-shadow: 0px 0px 1px 0px;
-  z-index: 2;
+  display: flex;
+  overflow: hidden;
+  padding: 0 1em;
+  width: 90%;
+  border: 2px solid var(--bg-blue);
+  border-right: 0;
+  border-left: 0;
 
   & span {
+    font-weight: 600;
+    color: var(--bg-blue);
     width: 100%;
     text-align: center;
-    padding: 10px 20px;
-    background-color: #fff;
-    border: 3px solid white;
-    border-radius: 2px;
-
+    padding: 30px;
+    border: 2px solid #fff;
+    border-bottom: 0;
+    border-top: 0;
+    transition: transform .4s linear;
+    transform: translate( ${({ translateTo }) => translateTo + '%, 0'});
+    
     &:hover {
-      border: solid 3px var(--dark-blue);
+      border-color: var(--hover-blue);
       color: var(--hover-blue);
     }
   }
 
   @media screen and (max-width: 700px) {
-    grid-template-columns: repeat(3, 1fr);
-
     & span {
-      padding: 5px 15px;
+      padding: 15px;
     }
   }
   
-  @media screen and (max-width: 400px) {
-    grid-template-columns: repeat(2, 1fr);
+  @media screen and (max-width: 500px) {
+    & span {
+      font-size: .8rem;
+      padding: 10px;
+    }
   }
 `
