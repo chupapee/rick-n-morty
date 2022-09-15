@@ -3,8 +3,8 @@ import { episodeAPI } from "../../../service/episodeAPI";
 import { PayloadType } from "../../episodes/types";
 import { episodesSucceeded } from "./slice";
 
-function* getEpisodes(action: {type: string, payload: number[]}) {  
-  const data: PayloadType = yield call(() => episodeAPI.getEpisode(action.payload))
+function* getEpisodes(action: {type: string, payload: {ordersId: number[], totalPrice: number}}) {
+  const data: PayloadType = yield call(() => episodeAPI.getEpisode(action.payload.ordersId))
   yield put(episodesSucceeded(data.episode))
 }
 

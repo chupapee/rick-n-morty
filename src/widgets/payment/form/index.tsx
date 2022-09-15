@@ -1,7 +1,7 @@
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import { useNavigate } from 'react-router-dom';
 import { clearShopList } from '../../../pages/cart/model/slice';
-import { addOrders, episodesFething } from '../../../pages/order/model/slice';
+import { addOrders, episodesFething } from '../../../pages/orders/model/slice';
 import { useAppDispatch, useAppSelector } from '../../../store/types';
 import { Form, PayBtn, Wrap } from "./style";
 
@@ -9,6 +9,7 @@ export const PaymentForm: React.FC<{price: number, closePayment: () => void}> = 
   const [paid, setPaid] = useState(false)
   const navigate = useNavigate()
   const dispatch = useAppDispatch()
+  const totalPrice = useAppSelector(state => state.cart.totalPrice)
 
   const orders = useAppSelector(state => state.cart.shopList)
   const ordersId = orders.map(({id}) => id)
@@ -16,7 +17,7 @@ export const PaymentForm: React.FC<{price: number, closePayment: () => void}> = 
   const handleSubmit: React.FormEventHandler<HTMLFormElement> = (e) => {
     e.preventDefault()
     dispatch(addOrders(ordersId))
-    dispatch(episodesFething(ordersId))
+    dispatch(episodesFething({ordersId, totalPrice}))
     setPaid(true)
     setTimeout(() => {
       closePayment()

@@ -13,6 +13,7 @@ export const GlobalStyle = createGlobalStyle`
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     font-size: 16;
     padding: 0 15px 15px;
+    color: var(--bg-blue);
 
     max-width: 1600px;
     min-width: 300px;
